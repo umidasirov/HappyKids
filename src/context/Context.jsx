@@ -6,7 +6,7 @@ export const MainContext = createContext();
 
 // 👉 Провайдер
 export function MainProvider({ children }) {
-    const [domen,setDomen] = useState('https://pythonproject2-wceu.onrender.com/')
+    const [domen,setDomen] = useState('https://pythonproject2-wceu.onrender.com')
 
 
     const [user, setUser] = useState({
