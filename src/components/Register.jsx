@@ -1,5 +1,6 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState,useContext } from 'react';
 import flatpickr from 'flatpickr';
+import { MainContext } from '../context/Context';
 import 'flatpickr/dist/flatpickr.min.css';
 import { Russian } from 'flatpickr/dist/l10n/ru.js';
 import MainBtn from './MainBtn';
@@ -21,7 +22,7 @@ export default function Register() {
     tugulganKuni: ''
   });
   const [message, setMessage] = useState('');
-
+  const {domen} = useContext(MainContext)
   const handleChange = (e) => {
     setFormData(prev => ({
       ...prev,
@@ -53,7 +54,7 @@ export default function Register() {
  const handleSubmit = async (e) => {
   e.preventDefault();
   try {
-    const response = await axios.post('http://localhost:8000/api/register/', formData, {
+    const response = await axios.post(`${domen}/api/register/`, formData, {
       headers: { 'Content-Type': 'application/json' }
     });
     setMessage('✅ Регистрация успешна!');

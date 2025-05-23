@@ -6,6 +6,9 @@ export const MainContext = createContext();
 
 // 👉 Провайдер
 export function MainProvider({ children }) {
+    const [domen,setDomen] = useState('https://pythonproject2-wceu.onrender.com/')
+
+
     const [user, setUser] = useState({
         id: 548976,
         name: "Umidjon",
@@ -23,7 +26,7 @@ export function MainProvider({ children }) {
     // ✅ Login
     const loginUser = async (email, password) => {
         try {
-            const res = await axios.post("http://localhost:8000/api/login/", {
+            const res = await axios.post(`${domen}/api/login/`, {
                 email,
                 password
             });
@@ -49,7 +52,7 @@ export function MainProvider({ children }) {
         if (!token) return;
     
         try {
-            const response = await axios.get("http://localhost:8000/api/profile/", {
+            const response = await axios.get(`${domen}/api/profile/`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
