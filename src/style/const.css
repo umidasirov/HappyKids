@@ -1,0 +1,284 @@
+.primary-button {
+  width: 180px;
+  height: 56px;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: 700;
+  overflow: hidden;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  background: #2A7B9B;
+  background: linear-gradient(90deg, rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+  background-size: 300%;
+  animation: rainbowMove 5s linear infinite;
+  transition: box-shadow 0.3s ease;
+}
+
+.primary-button:hover {
+  animation: rainbowMove 10s linear infinite;
+  box-shadow: 1px 1px 8px -3px #000;
+}
+
+@keyframes rainbowMove {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Category */
+.category a.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-image: linear-gradient(90deg,
+      rgba(131, 58, 180, 1) 0%,
+      rgba(253, 29, 29, 1) 50%,
+      rgba(252, 176, 69, 1) 100%);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease-in-out;
+}
+.category a.active{
+  transform: scale(1);
+}
+
+
+
+/* SecondaryButton */
+.secondary-button {
+  color: #4f46e5;
+  width: 200px;
+  height: 56px;
+  border-radius: 30px;
+  border: 2px solid #c9d3fe;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.secondary-button:hover {
+  border-color: #a5b4fc;
+  box-shadow: 1px 1px 8px -3px #000;
+}
+
+/* logo */
+.logo {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 220px;
+  text-decoration: none;
+  gap: 10px;
+}
+
+.logo-style {
+  font-size: 40px;
+  font-weight: 700;
+  background: linear-gradient(90deg,
+      rgba(131, 58, 180, 1) 0%,
+      rgba(253, 29, 29, 1) 50%,
+      rgba(252, 176, 69, 1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.logo-title {
+  font-size: 28px;
+  font-weight: 700;
+  background: linear-gradient(90deg,
+      rgba(131, 58, 180, 1) 0%,
+      rgba(253, 29, 29, 1) 50%,
+      rgba(252, 176, 69, 1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+
+.logo-brand {
+  width: 40px;
+  height: 40px;
+  z-index: 2;
+  animation: logoMove 2s linear infinite;
+}
+
+.absolute-cloud-logo {
+  position: absolute;
+  font-size: 30px;
+  left: 30px;
+  top: -20px;
+  z-index: 0;
+  width: 80px;
+  opacity: 0.4;
+  animation: cloudMoveDiamond 10s linear infinite;
+}
+
+
+@keyframes logoMove {
+  0% {
+    transform: translateY(0px);
+  }
+
+  25% {
+    transform: translateY(1px);
+  }
+
+  50% {
+    transform: translateY(0px);
+  }
+
+  75% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes TopBot {
+  0% {
+    transform: translateY(0px);
+  }
+
+  25% {
+    transform: translateY(10px);
+  }
+
+  50% {
+    transform: translateY(0px);
+  }
+
+  75% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes cloudMoveDiamond {
+  0% {
+    transform: translate(0px, 0px);
+    /* Центр */
+  }
+
+  25% {
+    transform: translate(10px, 10px);
+    /* Вправо-вниз */
+  }
+
+  50% {
+    transform: translate(-10px, 10px);
+    /* Влево-вниз */
+  }
+
+  75% {
+    transform: translate(-10px, -10px);
+    /* Влево-вверх */
+  }
+
+  100% {
+    transform: translate(0px, 0px);
+    /* Назад в центр */
+  }
+}
+
+/* Main Button */
+.main-btn {
+  background: linear-gradient(90deg, rgba(53, 40, 191, 1), rgba(145, 46, 232, 1), rgba(169, 90, 237, 1));
+  background-size: 200% 100%;
+  background-position: left center;
+  transition: background-position 1s ease;
+  color: white;
+  border-radius: 30px;
+  border: none;
+}
+
+.main-btn:hover {
+  background-position: right center;
+}
+
+.animation_top_back {
+  animation: infinite linear 3s TopBot;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animation_circle {
+  animation: rotate infinite linear 4s;
+}
+
+/* titles */
+.title {
+  text-align: center;
+  font-style: 30px;
+  color: #4f46e5;
+}
+
+/* login */
+.login {
+  width: 400px;
+  height: 500px;
+  margin: 0 auto;
+  margin-top: 90px;
+  border: #c9d3fe 1px solid;
+  border-radius: 10px;
+}
+
+.login-head {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: #4f46e5;
+  color: #fff;
+  padding: 10px;
+  width: 100%;
+  font-size: 25px;
+}
+
+.login-form {
+  padding: 20px;
+}
+
+label {
+  margin-bottom: 10px;
+}
+
+.button-ofinput {
+  margin-top: 30px;
+  border-radius: 10px !important;
+  text-align: center;
+}
+
+.button-ofinput button {
+  width: 300px;
+  margin-top: 15px;
+  height: 40px;
+}
+
+
+.log-out button{
+  height: 44px !important;
+  margin-left: 5px;
+}
