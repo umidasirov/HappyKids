@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.7.2",
     "aos": "^2.3.4",
     "axios": "^1.9.0",
     "flatpickr": "^4.6.13",

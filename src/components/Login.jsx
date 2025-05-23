@@ -1,27 +1,28 @@
 import MainBtn from "./MainBtn";
 import SecondaryButton from "./SecondaryButton";
-import { Link,useNavigate  } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { MainContext } from "../context/Context";
 
 export default function Login() {
     const { loginUser, email, setEmail, password, setPassword } = useContext(MainContext);
     const navigate = useNavigate();
-    const [a,setA] = useState(null)
+    const [isLoading, SetIsLoading] = useState(false)
+    const [a, setA] = useState(null)
     const handleSubmit = async (e) => {
+        SetIsLoading(true)
         e.preventDefault();
         const success = await loginUser(email, password);
         if (success) {
-            // redirect to profile page, for example:
             navigate('/profile');
         } else {
-            // xatolik haqida habar ko‘rsatish yoki boshqa amal
-            setA(<div style={{color:"red"}}>Xato</div>)
+            setA(<div style={{ color: "red" }}>Xato</div>)
         }
+        SetIsLoading(false)
     };
-    
+
     return (
-        <div className='login' data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
+        <div className='login' data-aos="fade-right" style={isLoading ? { opacity: "0.6", zIndex: 1 } : null} data-aos-offset="300" data-aos-easing="ease-in-sine">
             <div className="login-head">🙂 Xush Kelibsiz!</div>
             <form className="login-form" onSubmit={handleSubmit}>
                 <div className='main-login-forms'>
@@ -67,9 +68,12 @@ export default function Login() {
                             Eslab qolish
                         </label>
                     </div>
+                    {isLoading ? <div class="spinner spinner-border text-primary" role="status" >
+                        <span class="sr-only">Loading...</span>
+                    </div>:null}
                     {a}
                     <div className="button-ofinput">
-                            <MainBtn type='submit'>Kirish</MainBtn>
+                        <MainBtn type='submit'>Kirish</MainBtn>
                         <Link to='/register'>
                             <SecondaryButton>Ro'yhatdan o'tish</SecondaryButton>
                         </Link>

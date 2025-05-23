@@ -50,7 +50,8 @@
   transform-origin: left;
   transition: transform 0.3s ease-in-out;
 }
-.category a.active{
+
+.category a.active {
   transform: scale(1);
 }
 
@@ -240,6 +241,7 @@
 /* login */
 .login {
   width: 400px;
+  background-color: #fff !important;
   height: 500px;
   margin: 0 auto;
   margin-top: 90px;
@@ -259,6 +261,8 @@
 
 .login-form {
   padding: 20px;
+  position: relative;
+  z-index: 3 !important;
 }
 
 label {
@@ -278,7 +282,119 @@ label {
 }
 
 
-.log-out button{
+.log-out button {
   height: 44px !important;
   margin-left: 5px;
+}
+
+.ring {
+  width: 20px;
+  animation: infinite linear 3s ring;
+  transform-origin: 70% 70%;
+}
+
+@keyframes ring {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  10% {
+    transform: rotate(14deg);
+  }
+
+  20% {
+    transform: rotate(-8deg);
+  }
+
+  30% {
+    transform: rotate(14deg);
+  }
+
+  40% {
+    transform: rotate(-4deg);
+  }
+
+  50% {
+    transform: rotate(10deg);
+  }
+
+  60% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.hi span {
+  margin-left: 10px;
+}
+
+.learn {
+  width: 250px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+.learn h2 {
+  font-size: 20px;
+}
+
+.learn-container {
+  width: 100%;
+  height: 20px;
+  border: 1px solid;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.learn-percent {
+  height: 100%;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+
+.spinner {
+  z-index: -9;
+  position: relative;
+}
+
+.login {
+  background: #fff;
+}
+
+.head-learn {
+  height: 20px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.quick-links {
+  width: 300px;
+  margin-top: 30px;
+  border-radius: 10px;
+  padding: 30px;
+  height: 300px;
+  border: 1px solid #4f46e5;
+}
+
+.quick-panel {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+}
+
+.avatar-main{
+  width: 60px;
+  height: 60px;
+  padding: 10px 20px;
+  font-size: 30px;
+  background-color: #4f46e5;
+  color: #fff;
+  border-radius: 50%;
 }

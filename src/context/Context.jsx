@@ -102,7 +102,8 @@ export function MainProvider({ children }) {
                 email,
                 setEmail,
                 password,
-                setPassword
+                setPassword,
+                domen
             }}
         >
             {children}

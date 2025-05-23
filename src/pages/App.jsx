@@ -12,7 +12,7 @@ import Login from "../components/Login";
 import Register from "../components/Register";
 import Shaxsiy from "./Shaxsiy";
 import { MainContext } from "../context/Context";
-import PrivateRoute ,{PrivateFor} from "../Routes/PrivateRote"; // Импортируй сюда
+import PrivateRoute ,{PrivateFor} from "../Routes/PrivateRote";
 
 export default function App() {
   useEffect(() => {

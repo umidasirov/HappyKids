@@ -19,7 +19,7 @@ export default function Main() {
                 <div className="first-main-container">
                     {
                         isLogin?
-                        <h3>Salom <span style={{color:"green"}}>{getUser.ism}</span></h3>
+                        <h3 className="d-flex hi">Salom <span style={{color:"green"}}>{getUser.ism}</span> <p className="ring">👋</p></h3>
                         :
                         <h2>Xush kelibsiz</h2>
                     }

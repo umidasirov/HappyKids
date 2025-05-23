@@ -23,6 +23,8 @@ export default function Register() {
   });
   const [message, setMessage] = useState('');
   const {domen} = useContext(MainContext)
+  console.log(domen);
+  
   const handleChange = (e) => {
     setFormData(prev => ({
       ...prev,
