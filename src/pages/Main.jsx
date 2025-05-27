@@ -16,7 +16,9 @@ import {
   BsCircle,
   BsSquare,
 } from "react-icons/bs";
-
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import { Autoplay } from "swiper/modules";
 export default function Main() {
   const [isLog, setIsLog] = useState(false);
   const { whyUs, categories } = useContext(MainContext);
@@ -127,7 +129,109 @@ export default function Main() {
           </div>
         </div>
       </div>
-      <div className="title">jfgd</div>
+      <div className="title">Ota onalarning fikri</div>
+      <div className="comments">
+      <Swiper
+        modules={[Autoplay]}
+        spaceBetween={50}
+        autoplay={{ delay: 3000, disableOnInteraction: true }}
+        slidesPerView={3}
+        onSlideChange={() => console.log("slide change")}
+        onSwiper={(swiper) => console.log(swiper)}
+      >
+        <SwiperSlide>
+          <div className="comment-card">
+            <div className="parent">
+              <div className="avatar">S</div>
+              <div className="whose-parent">
+                <div className="name-parent">Sarah Johnson</div>
+                <div className="parent-child">Mom of Emma, 4</div>
+              </div>
+            </div>
+            <div className="parent-main-commetn">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat
+              consequatur cumque corrupti unde iste eaque quas odit maxime ullam
+              officia veritatis maiores reprehenderit asperiores expedita libero
+              sequi numquam, quidem vitae.
+            </div>
+            <div className="stars">⭐⭐⭐⭐⭐</div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="comment-card">
+            <div className="parent">
+              <div className="avatar">S</div>
+              <div className="whose-parent">
+                <div className="name-parent">Sarah Johnson</div>
+                <div className="parent-child">Mom of Emma, 4</div>
+              </div>
+            </div>
+            <div className="parent-main-commetn">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat
+              consequatur cumque corrupti unde iste eaque quas odit maxime ullam
+              officia veritatis maiores reprehenderit asperiores expedita libero
+              sequi numquam, quidem vitae.
+            </div>
+            <div className="stars">⭐⭐⭐⭐⭐</div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="comment-card">
+            <div className="parent">
+              <div className="avatar">S</div>
+              <div className="whose-parent">
+                <div className="name-parent">Sarah Johnson</div>
+                <div className="parent-child">Mom of Emma, 4</div>
+              </div>
+            </div>
+            <div className="parent-main-commetn">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat
+              consequatur cumque corrupti unde iste eaque quas odit maxime ullam
+              officia veritatis maiores reprehenderit asperiores expedita libero
+              sequi numquam, quidem vitae.
+            </div>
+            <div className="stars">⭐⭐⭐⭐⭐</div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="comment-card">
+            <div className="parent">
+              <div className="avatar">S</div>
+              <div className="whose-parent">
+                <div className="name-parent">Sarah Johnson</div>
+                <div className="parent-child">Mom of Emma, 4</div>
+              </div>
+            </div>
+            <div className="parent-main-commetn">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat
+              consequatur cumque corrupti unde iste eaque quas odit maxime ullam
+              officia veritatis maiores reprehenderit asperiores expedita libero
+              sequi numquam, quidem vitae.
+            </div>
+            <div className="stars">⭐⭐⭐⭐⭐</div>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div className="comment-card">
+            <div className="parent">
+              <div className="avatar">S</div>
+              <div className="whose-parent">
+                <div className="name-parent">Sarah Johnson</div>
+                <div className="parent-child">Mom of Emma, 4</div>
+              </div>
+            </div>
+            <div className="parent-main-commetn">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat
+              consequatur cumque corrupti unde iste eaque quas odit maxime ullam
+              officia veritatis maiores reprehenderit asperiores expedita libero
+              sequi numquam, quidem vitae.
+            </div>
+            <div className="stars">⭐⭐⭐⭐⭐</div>
+          </div>
+        </SwiperSlide>
+      </Swiper>
+
+      </div>
     </div>
   );
 }

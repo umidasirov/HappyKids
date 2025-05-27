@@ -338,7 +338,7 @@ body {
                     transform: translateY(-10px);
                   }
                 }
-                .arrow{
+                .arrow {
                   margin-left: 10px;
                 }
                 .category-title {
@@ -350,6 +350,50 @@ body {
                 }
                 .category-link {
                   padding: 10px;
+                }
+              }
+            }
+          }
+        }
+        .comments {
+          display: flex;
+          align-items: center;
+          width: 1440px;
+          justify-content: space-around;
+          margin: 0 auto;
+          .comment-card {
+            width: 400px;
+            height: 400px;
+            border: 1px solid;
+            border-radius: 10px;
+            padding: 30px;
+            .parent {
+              margin-bottom: 30px;
+              display: flex;
+              align-items: center;
+              .avatar {
+                margin-right: 20px;
+                width: 100px;
+                height: 100px;
+                font-size: 30px;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+                border-radius: 50%;
+                border: 1px solid;
+                .fn {
+                  text-align: center !important;
+                }
+              }
+              .whose-parent{
+                .name-parent{
+                  font-size: 20px;
+                  font-weight: 600;
+                }
+                .parent-child{
+                  font-weight: 100;
                 }
               }
             }
