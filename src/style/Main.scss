@@ -8,6 +8,9 @@ $mt: 60px;
 
 body {
   .app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     .nav {
       margin-top: 2px;
 
@@ -97,8 +100,7 @@ body {
     }
 
     .pages {
-      height: 100vh;
-
+      flex: 1;
       .main {
         .main-banner {
           box-shadow: $boxShadow;
@@ -267,7 +269,7 @@ body {
             .category-card {
               width: 380px;
               border-radius: 10px;
-              height: 400px;
+              height: 420px;
               .category-icon {
                 position: relative;
                 height: 200px;
@@ -313,15 +315,18 @@ body {
               }
 
               .category-title {
+                color: $primary;
                 padding: 10px;
-                width: 140px;
                 overflow: hidden;
+                margin-bottom: 0;
               }
               .category-description {
                 padding: 10px;
-                height: 68px;
+                height: 88px;
+                color: $forp;
               }
               .category-link {
+                margin-top: 10px !important;
                 padding: 10px;
               }
               &:hover {
@@ -346,7 +351,6 @@ body {
                 }
                 .category-description {
                   padding: 10px;
-                  height: 68px;
                 }
                 .category-link {
                   padding: 10px;
@@ -387,15 +391,18 @@ body {
                   text-align: center !important;
                 }
               }
-              .whose-parent{
-                .name-parent{
+              .whose-parent {
+                .name-parent {
                   font-size: 20px;
                   font-weight: 600;
                 }
-                .parent-child{
+                .parent-child {
                   font-weight: 100;
                 }
               }
+            }
+            .parent-main-commetn {
+              margin-bottom: 10px;
             }
           }
         }
@@ -472,6 +479,58 @@ body {
                 }
               }
             }
+          }
+        }
+      }
+    }
+
+    .footer {
+      background-color: $bigMain;
+      width: 1440px;
+      margin: 0 auto;
+      justify-content: space-between;
+      display: flex;
+      align-items: flex-start;
+      margin-top: 100px;
+      height: 250px;
+      padding: 30px;
+      padding-bottom: 50px;
+      border: 1px solid;
+      color: #fff;
+      border-radius: 10px 10px 0 0;
+      .first-footer-category {
+        width: 300px;
+        .logo-footer {
+          font-size: 30px;
+        }
+        .first-footer-description {
+          margin-top: 20px;
+          margin-bottom: 10px;
+        }
+        .social-networks {
+          i {
+            margin-right: 10px;
+            font-size: 30px;
+          }
+        }
+      }
+      .footer-con {
+        .foot-title {
+          font-size: 23px;
+        }
+        .mini-bar {
+          margin-top: 20px;
+          display: flex;
+          align-items: start;
+          flex-direction: column;
+          justify-content: start;
+          text-align: left;
+          div {
+            margin-top: 10px;
+          }
+          a {
+            margin-top: 10px;
+            color: #fff;
           }
         }
       }

@@ -113,7 +113,7 @@ export default function Main() {
                   }}
                 >
                   <div className="overlay" />
-                  <div className="icon">{categoryIcons[category.title]}</div>
+                  <div className="icon">{categoryIcons[category.icon]}</div>
                 </div>
                 <h3 className="category-title">{category.title}</h3>
                 <p className="category-description">{category.description}</p>
@@ -148,7 +148,7 @@ export default function Main() {
                 <div className="parent-child">Mom of Emma, 4</div>
               </div>
             </div>
-            <div className="parent-main-commetn">
+            <div className="parent-main-commetn i">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat
               consequatur cumque corrupti unde iste eaque quas odit maxime ullam
               officia veritatis maiores reprehenderit asperiores expedita libero

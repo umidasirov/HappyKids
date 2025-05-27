@@ -116,9 +116,11 @@ export function MainProvider({ children }) {
 
     // In your context provider file
 // In your context provider file
+
 const [categories] = useState([
   {
     id: 1,
+    icon:"Games",
     title: "O'yinlar",
     description: "O'rganish jarayonini qiziqlashtiradigan interaktiv va qiziq mini oyinlar",
     link: "/games",
@@ -126,6 +128,7 @@ const [categories] = useState([
   },
   {
     id: 2,
+    icon:"Stories",
     title: "Ertaklar",
     description: "Qiziq va mashxur bolgan eratklar, ertklarni oqishni yaxshi koradigan bolalar uchun",
     link: "/story",
@@ -133,13 +136,15 @@ const [categories] = useState([
   },
   {
     id: 3,
-    title: "Activities",
-    description: "Bolalar uchun qiziqarli va rivojlantiruvchi faoliyatlar — matematik misollar, rang berish, ijodiy loyihalar va ma'rifatli mashqlar!",
+    title: "Mashqlar",
+    icon:"Activities",
+    description: "Bolalar uchun qiziqarli va rivojlantiruvchi faoliyatlar — matematik misollar va ma'rifatli mashqlar!",
     link: "/activities",
     bgColor: "#E71D36"
   },
   {
     id: 4,
+    icon:"Parents",
     title: "Ota onalar",
     description: "Bolangizni qollab quvvatlash uchun ota onalarga maslahatlar.",
     link: "/parents",

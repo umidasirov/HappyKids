@@ -13,6 +13,7 @@ import Register from "../components/Register";
 import Shaxsiy from "./Shaxsiy";
 import { MainContext } from "../context/Context";
 import PrivateRoute ,{PrivateFor} from "../Routes/PrivateRote";
+import Footer from "../components/Footer";
 
 export default function App() {
   useEffect(() => {
@@ -47,6 +48,7 @@ export default function App() {
           />
         </Routes>
       </div>
+          <Footer/>
     </div>
   );
 }
