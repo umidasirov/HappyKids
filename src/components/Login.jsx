@@ -22,7 +22,7 @@ export default function Login() {
     };
 
     return (
-        <div className='login' data-aos="fade-right" style={isLoading ? { opacity: "0.6", zIndex: 1 } : null} data-aos-offset="300" data-aos-easing="ease-in-sine">
+        <div className='login sh' data-aos="fade-right" style={isLoading ? { opacity: "0.6", zIndex: 1,boxShadow:"2px 4px 10px rgba(0, 0, 0, 0.3)" } : null} data-aos-offset="300" data-aos-easing="ease-in-sine">
             <div className="login-head">🙂 Xush Kelibsiz!</div>
             <form className="login-form" onSubmit={handleSubmit}>
                 <div className='main-login-forms'>

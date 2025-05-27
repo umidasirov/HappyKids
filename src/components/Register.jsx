@@ -73,7 +73,7 @@ export default function Register() {
   const navigate = useNavigate();
 
   return (
-    <div className="register" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
+    <div className="register sh" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
       <div className="reg-first">
         <h2>Bizning oilamizga qoshiling !!!</h2>
         <p>O'zingiz uchun yangi akkaunt yarating va ozingiz va ushbu platformamizdagi ozingizni natijalaringizni saqlang</p>

@@ -6,7 +6,7 @@ export const MainContext = createContext();
 
 // 👉 Провайдер
 export function MainProvider({ children }) {
-    const [domen,setDomen] = useState('https://pythonproject2-wceu.onrender.com')
+    const [domen, setDomen] = useState('https://pythonproject2-wceu.onrender.com')
 
 
     const [user, setUser] = useState({
@@ -30,12 +30,12 @@ export function MainProvider({ children }) {
                 email,
                 password
             });
-    
+
             localStorage.setItem("access", res.data.access);
             localStorage.setItem("refresh", res.data.refresh);
-    
+
             await getProfile(); // profilni yuklab oling
-    
+
             setIsLogin(true); // faqat shu yerda true qilamiz
             return true;
         } catch (err) {
@@ -44,13 +44,13 @@ export function MainProvider({ children }) {
             return false;
         }
     };
-    
+
 
     // ✅ Profilni olish
     const getProfile = async () => {
         const token = localStorage.getItem("access");
         if (!token) return;
-    
+
         try {
             const response = await axios.get(`${domen}/api/profile/`, {
                 headers: {
@@ -64,9 +64,34 @@ export function MainProvider({ children }) {
             throw error;
         }
     };
-    
-    
-    
+
+
+    const whyUs = [
+        {
+            back: "#FDE9F5",
+            darkBack: "#FBCFE8",
+            color: "#C43073",
+            main: "Ta'lim mazmuni",
+            icon: "bi bi-lightbulb",
+            description: "Bolalarning aqliy rivojlanishi uchun mo‘ljallangan, yangi bilimlar va muammolarni hal qilish ko‘nikmalarini shakllantiradi. Fikr yuritish va ijodiy fikrlashni rivojlantirishga yordam beradi."
+        },
+        {
+            back: "#E1EEFF",
+            darkBack: "#BFDBFF",
+            color: "#2460D0",
+            main: "Qiziqali interfeys",
+            icon: "bi bi-emoji-smile",
+            description: "Yorqin ranglar va animatsiyalar bolalarning diqqatini jalb qiladi. Interaktiv elementlar o‘rganishni oson va qiziqarli qiladi."
+        },
+        {
+            back: "#F8F0FF",
+            darkBack: "#EBD5FB",
+            color: "#8D41D6",
+            main: "Ota onalar ishtiroki",
+            icon: "bi bi-people",
+            description: "Ota-onalar bolalarining o‘rganishini kuzatib, maslahat va qo‘llab-quvvatlash imkoniga ega bo‘ladi. Farzandlar bilan yaqinroq muloqot o‘rnatiladi."
+        }
+    ]
 
     // ✅ Logout
     const logoutUser = () => {
@@ -89,9 +114,44 @@ export function MainProvider({ children }) {
         }
     }, []);
 
+    // In your context provider file
+// In your context provider file
+const [categories] = useState([
+  {
+    id: 1,
+    title: "Games",
+    description: "Interactive games that make learning fun and engaging.",
+    link: "/games",
+    bgColor: "#FF9F1C"
+  },
+  {
+    id: 2,
+    title: "Stories",
+    description: "Engaging tales that spark imagination and creativity.",
+    link: "/story",
+    bgColor: "#2EC4B6"
+  },
+  {
+    id: 3,
+    title: "Activities",
+    description: "Hands-on projects that develop fine motor skills.",
+    link: "/activities",
+    bgColor: "#E71D36"
+  },
+  {
+    id: 4,
+    title: "Parents",
+    description: "Resources and tools to support your child's learning.",
+    link: "/parents",
+    bgColor: "#662E9B"
+  }
+]);
+    
     return (
         <MainContext.Provider
             value={{
+                whyUs,
+                categories,
                 user,
                 setUser,
                 isLogin,

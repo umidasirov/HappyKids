@@ -233,9 +233,11 @@
 
 /* titles */
 .title {
+  margin-top: 150px;
+  margin-bottom: 80px;
   text-align: center;
-  font-style: 30px;
-  color: #4f46e5;
+  font-size: 30px;
+  color: #5e15d4;
 }
 
 /* login */
@@ -397,4 +399,9 @@ label {
   background-color: #4f46e5;
   color: #fff;
   border-radius: 50%;
+}
+
+/* box shadow */
+.sh{
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
 }
