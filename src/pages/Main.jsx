@@ -129,7 +129,7 @@ export default function Main() {
           </div>
         </div>
       </div>
-      <div className="title">Ota onalarning fikri</div>
+      <div className="title">Ota onalarning fikrlari</div>
       <div className="comments">
       <Swiper
         modules={[Autoplay]}

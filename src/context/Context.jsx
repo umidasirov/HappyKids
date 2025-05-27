@@ -119,29 +119,29 @@ export function MainProvider({ children }) {
 const [categories] = useState([
   {
     id: 1,
-    title: "Games",
-    description: "Interactive games that make learning fun and engaging.",
+    title: "O'yinlar",
+    description: "O'rganish jarayonini qiziqlashtiradigan interaktiv va qiziq mini oyinlar",
     link: "/games",
     bgColor: "#FF9F1C"
   },
   {
     id: 2,
-    title: "Stories",
-    description: "Engaging tales that spark imagination and creativity.",
+    title: "Ertaklar",
+    description: "Qiziq va mashxur bolgan eratklar, ertklarni oqishni yaxshi koradigan bolalar uchun",
     link: "/story",
     bgColor: "#2EC4B6"
   },
   {
     id: 3,
     title: "Activities",
-    description: "Hands-on projects that develop fine motor skills.",
+    description: "Bolalar uchun qiziqarli va rivojlantiruvchi faoliyatlar — matematik misollar, rang berish, ijodiy loyihalar va ma'rifatli mashqlar!",
     link: "/activities",
     bgColor: "#E71D36"
   },
   {
     id: 4,
-    title: "Parents",
-    description: "Resources and tools to support your child's learning.",
+    title: "Ota onalar",
+    description: "Bolangizni qollab quvvatlash uchun ota onalarga maslahatlar.",
     link: "/parents",
     bgColor: "#662E9B"
   }
