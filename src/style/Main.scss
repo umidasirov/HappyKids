@@ -98,7 +98,6 @@ body {
         }
       }
     }
-
     .pages {
       flex: 1;
       .main {
@@ -407,7 +406,9 @@ body {
           }
         }
       }
-
+      .games{
+        
+      }
       .Shaxsiy {
         margin: 0 auto;
         margin-top: 20px;
@@ -483,7 +484,6 @@ body {
         }
       }
     }
-
     .footer {
       background-color: $bigMain;
       width: 1440px;
@@ -492,7 +492,7 @@ body {
       display: flex;
       align-items: flex-start;
       margin-top: 100px;
-      height: 250px;
+      height: 230px;
       padding: 30px;
       padding-bottom: 50px;
       border: 1px solid;
@@ -501,7 +501,7 @@ body {
       .first-footer-category {
         width: 300px;
         .logo-footer {
-          font-size: 30px;
+          font-size: 25px;
         }
         .first-footer-description {
           margin-top: 20px;
@@ -510,7 +510,7 @@ body {
         .social-networks {
           i {
             margin-right: 10px;
-            font-size: 30px;
+            font-size: 20px;
           }
         }
       }
@@ -519,14 +519,14 @@ body {
           font-size: 23px;
         }
         .mini-bar {
-          margin-top: 20px;
+          margin-top: 10px;
           display: flex;
           align-items: start;
           flex-direction: column;
           justify-content: start;
           text-align: left;
           div {
-            margin-top: 10px;
+            margin-top: 7px;
           }
           a {
             margin-top: 10px;

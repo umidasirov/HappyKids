@@ -12,9 +12,9 @@ import Login from "../components/Login";
 import Register from "../components/Register";
 import Shaxsiy from "./Shaxsiy";
 import { MainContext } from "../context/Context";
-import PrivateRoute ,{PrivateFor} from "../Routes/PrivateRote";
+import PrivateRoute, { PrivateFor } from "../Routes/PrivateRote";
 import Footer from "../components/Footer";
-
+import Games from "./Games";
 export default function App() {
   useEffect(() => {
     AOS.init({
@@ -33,11 +33,8 @@ export default function App() {
           <Route path="/login" element={
             <PrivateFor to='/'>
               <Login />
-            </PrivateFor>
-          } />
+            </PrivateFor>} />
           <Route path="/register" element={<Register />} />
-
-          {/* Защищённый маршрут */}
           <Route
             path="/shaxsiy"
             element={
@@ -46,9 +43,10 @@ export default function App() {
               </PrivateRoute>
             }
           />
+          <Route path="/games/*" element={<Games />}/>
         </Routes>
       </div>
-          <Footer/>
+      <Footer />
     </div>
   );
 }
