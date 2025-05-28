@@ -16,6 +16,12 @@ export default function Shaxsiy() {
       data-aos-offset="300"
       data-aos-easing="ease-in-sine"
     >
+      <nav style={{ "--bs-breadcrumb-divider": "'>'" }} aria-label="breadcrumb">
+        <ol className="breadcrumb">
+          <li className="breadcrumb-item"><Link to="/">Asosiy</Link></li>
+          <li className="breadcrumb-item active" aria-current="page">O'yinlar</li>
+        </ol>
+      </nav>
       <div className="left-container">
         <div className="profile">
           <div className="main-avatar">
