@@ -407,7 +407,16 @@ body {
         }
       }
       .games{
-        margin-top: 40px;
+        .main-games{
+          width: 1440px;
+          margin: 0 auto;
+        }
+        nav{
+          font-size: 15px;
+        }
+        .color-game{
+          width: 1440px !important;
+        }
       }
       .Shaxsiy {
         margin: 0 auto;

@@ -1,5 +1,6 @@
 import { useState, useEffect, useMemo } from "react";
 import Confetti from "react-confetti";
+import {Link} from "react-router-dom"
 
 const allColors = [
   "#FF6B6B", "#FFD93D", "#6BCB77", "#4D96FF", "#FF9F1C",
@@ -143,14 +144,23 @@ export default function ColorGame() {
 
   return (
     <div
-      className="text-center p-4 position-relative"
+      className="text-center p-4 position-relative color-game"
       style={{
         fontFamily: "'Comic Sans MS', cursive, sans-serif",
         minHeight: "80vh",
-        maxWidth: 700,
+        maxWidth: 1440,
         margin: "0 auto",
       }}
     >
+
+      <nav style={{ "--bs-breadcrumb-divider": "'>'" }} aria-label="breadcrumb">
+        <ol className="breadcrumb">
+          <li className="breadcrumb-item"><Link to="/">Asosiy</Link></li>
+          <li className="breadcrumb-item"><Link to="/games">O'yinlar</Link></li>
+          <li className="breadcrumb-item active" aria-current="page">Ranglarni topish o'yini</li>
+        </ol>
+      </nav>
+
       <h2
         className="mb-6"
         style={{
@@ -158,7 +168,7 @@ export default function ColorGame() {
           fontSize: "2rem",
           color: "#333",
           textShadow: "2px 2px 5px #aaa",
-          marginBottom:"40px"
+          marginBottom: "40px"
         }}
       >
         {getColorName(targetColor)} rangini top!
