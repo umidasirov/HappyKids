@@ -83,7 +83,7 @@ export default function Register() {
           <li className="list-group-item"> O'yinlar</li>
         </ul>
         <div className="info">
-          Happy Baby bu 3 yoshdan 8 yoshgacha bolgan bolalar uchun moljallanga platforma bolib bu yerda bolalar ertaklar oqishi xar xil jismoniy mashqalar qilishi mumkin undab tashqa bu yerda ota onalar uchun maslahatlarxam bor
+          Happy Kids bu 3 yoshdan 8 yoshgacha bolgan bolalar uchun moljallanga platforma bolib bu yerda bolalar ertaklar oqishi xar xil jismoniy mashqalar qilishi mumkin undab tashqa bu yerda ota onalar uchun maslahatlarxam bor
         </div>
       </div>
       <div className="reg-second">

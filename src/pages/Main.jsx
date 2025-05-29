@@ -45,7 +45,7 @@ export default function Main() {
       >
         <div className="first-main-container">
           <h1 className="title-main">
-            O'rganish <span className="logo-style">Happy Baby</span> bilan
+            O'rganish <span className="logo-style">Happy Kids</span> bilan
             ajoyib!
           </h1>
           <p>
