@@ -161,7 +161,7 @@ export default function ColorGame() {
         </ol>
       </nav>
 
-      <h2
+      <h2 
         className="mb-6"
         style={{
           fontWeight: "bold",
@@ -177,6 +177,9 @@ export default function ColorGame() {
       <div
         className="d-flex justify-content-center flex-wrap gap-4 mb-4"
         style={{ maxWidth: "600px", margin: "0 auto" }}
+                data-aos="fade-right"
+        data-aos-offset="300"
+        data-aos-easing="ease-in-sine"
       >
         {colors.map((color) => (
           <button

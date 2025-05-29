@@ -212,7 +212,12 @@ const NumberCountingGame = () => {
           : `Tabriklaymiz! Maksimumga yetdingiz!`}
       </h2>
 
-      <div className="row justify-content-center mb-3">
+      <div
+        className="row justify-content-center mb-3"
+        data-aos="fade-right"
+        data-aos-offset="300"
+        data-aos-easing="ease-in-sine"
+      >
         {shuffledNumbers.map((num) => (
           <div key={num} className="col-3 col-md-1 m-2">
             <button

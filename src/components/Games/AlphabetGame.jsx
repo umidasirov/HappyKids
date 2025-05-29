@@ -99,7 +99,12 @@ const AlphabetFinder = () => {
         </select>
       </div>
 
-      <div className="d-flex flex-wrap justify-content-center mb-3">
+      <div
+        className="d-flex flex-wrap justify-content-center mb-3"
+        data-aos="fade-right"
+        data-aos-offset="300"
+        data-aos-easing="ease-in-sine"
+      >
         {letters.map((letter, i) => (
           <button
             key={letter}
