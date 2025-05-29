@@ -447,6 +447,28 @@ body {
         .main-games {
           width: 1440px;
           margin: 0 auto;
+          .main-game-content{
+            .main-game-banner{
+              margin-top: 40px;
+              .slide{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .game-slide-first{
+                  width: 40%;
+                }
+                button{
+                width: 400px;
+                height: 40px;
+                }
+                .game-slide-second{
+                img{
+                width: 500px;
+                height:500px;}
+                }
+              }
+            }
+          }
         }
 
         nav {
@@ -1105,8 +1127,37 @@ body {
           .main-games {
             width: 100%;
             margin: 0 auto;
+            .main-game-content{
+            .main-game-banner{
+              margin-top: 30px;
+              .slide{
+                border: 1px solid $bigMain;
+                border-radius: 10px;
+                padding: 15px;
+                height: 440px;
+                display: flex;
+                flex-direction: column-reverse;
+                align-items: center;
+                justify-content: space-between;
+                .game-slide-first{
+                  width: 100%;
+                  h1{
+                    color: $forp;
+                  }
+                }
+                button{
+                width: 100%;
+                height: 40px;
+                }
+                .game-slide-second{
+                img{
+                width: 200px;
+                height:200px;}
+                }
+              }
+            }
           }
-
+          }
           nav {
             font-size: 15px;
           }

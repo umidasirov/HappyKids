@@ -152,10 +152,37 @@ const [categories] = useState([
     bgColor: "#662E9B"
   }
 ]);
-    
+   const [topgames,setTopGames] = useState([
+    {
+        name:"Ranglarni topish o'yini",
+        star:4.5,
+        img:"https://imagecompresser.com/color-picker.jpg",
+        description:"Bolalar uchun ajoyib bolgan oyin bolib bolalr uchun rang tanlaydi, bolalar esa u rangni topishlari kerak",
+        hTags:"o'rganish",
+        link:"/color-game"
+    },
+     {
+        name:"Harflarni ovoz orqali topsih o'yini",
+        star:5.0,
+        img:"https://c8.alamy.com/comp/2A7C3J9/illustration-of-kids-with-book-music-notes-and-the-alphabet-music-story-rhymes-2A7C3J9.jpg",
+        description:"Yana bir Ajoyib oyin bolib, nolalarni audio tinglash orqali alifboga o'rgatish sitemasi",
+        hTags:"o'rganish",
+        link:"/alphabet-game"
+    },
+     {
+        name:"Sonlarni ketmaketligini topsih o'yini",
+        star:4.3,
+        img:"https://infofaq.ru/wp-content/uploads/2016/12/chislo.jpg",
+        description:"Raqamlarni bilmaydigan bolalarng ularni tanishtiradi, bilganlarnga esa sonlarni",
+        hTags:"o'rganish",
+        link:"/count-game"
+    },
+]) 
     return (
         <MainContext.Provider
             value={{
+                setTopGames,
+                topgames,
                 sidebar,
                 setSidebar,
                 whyUs,
