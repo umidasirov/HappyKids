@@ -8,6 +8,7 @@ export const MainContext = createContext();
 export function MainProvider({ children }) {
     const [domen, setDomen] = useState('https://pythonproject2-wceu.onrender.com')
 
+    const [sidebar,setSidebar] = useState(false)
 
     const [user, setUser] = useState({
         id: 548976,
@@ -155,6 +156,8 @@ const [categories] = useState([
     return (
         <MainContext.Provider
             value={{
+                sidebar,
+                setSidebar,
                 whyUs,
                 categories,
                 user,

@@ -219,6 +219,15 @@
 
 @keyframes rotate {
   0% {
+    transform: rotate(360deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes rotate2 {
+  0% {
     transform: rotate(0deg);
   }
 
@@ -229,6 +238,9 @@
 
 .animation_circle {
   animation: rotate infinite linear 4s;
+}
+.animation_circle2 {
+  animation: rotate2 infinite linear 8s;
 }
 
 /* titles */
@@ -408,4 +420,7 @@ label {
 
 .i{
   font-style: italic;
+}
+.sidebar.active{
+  transform: translateX(0) !important;
 }

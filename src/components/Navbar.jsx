@@ -6,53 +6,62 @@ import { Link, NavLink } from 'react-router-dom'
 import { MainContext } from '../context/Context'
 import Button from './Button'
 export default function Navbar() {
-    const { user, isLogin, setIsLogin, logoutUser,getUser } = useContext(MainContext)
+    const { user, sidebar,setSidebar, isLogin, setIsLogin, logoutUser, getUser } = useContext(MainContext)
     const authorization = () => {
         console.log(user.boy);
 
+    }
+    const setSidebarState = (e) =>{
+        setSidebar(e=>!e)
     }
     return (
         <div className='nav'>
             <div className="nav-container">
                 <Logo />
-                <div className="category">
-                    <NavLink to='/'>Asosiy</NavLink>
-                    <NavLink to='/games'>Oyinlar</NavLink>
-                    <NavLink to='/story'>Ertaklar</NavLink>
-                    <NavLink to='/activities'>Mashqlar</NavLink>
-                    <NavLink to='/parents'>Ota-Onalarga</NavLink>
-                </div>
-                <div className="btn-group-user">
-                    {
-                        !isLogin ? (
-                            <>
-                                <Link to='/login'>
-                                    <SecondaryButton>Kirish</SecondaryButton>
-                                </Link>
-                                <Link to='/register'>
-                                    <MainBtn>Log up</MainBtn>
-                                </Link>
-                            </>
-                        ) : (
-                            <div className='d-flex'>
-                                <Link className="userBar" to='/shaxsiy'>
-                                    <div style={!getUser.avatar ? {padding:"8px 15px"}:null}>
-                                        {
-                                            getUser.avatar ?
-                                                <img src={getUser.avatar} alt="" />
-                                                :
-                                                getUser.ism[0]
-                                        }
-                                    </div>
-                                </Link>
-                                <div className='log-out' onClick={() => logoutUser()}>
-                                    <Button>log out</Button>
+                <div className={`sidebar ${sidebar?"active" : ''}`}>
+                    <div className="category">
+                        <div className="logo-sidebar"><Logo /> <button onClick={() => setSidebarState(sidebar)}><i class="bi bi-x-lg"></i></button></div>
+                        <NavLink to='/' onClick={()=>setSidebar(false)}>Asosiy</NavLink>
+                        <NavLink to='/games' onClick={()=>setSidebar(false)}>Oyinlar</NavLink>
+                        <NavLink to='/story' onClick={()=>setSidebar(false)}>Ertaklar</NavLink>
+                        <NavLink to='/activities' onClick={()=>setSidebar(false)}>Mashqlar</NavLink>
+                        <NavLink to='/parents' onClick={()=>setSidebar(false)}>Ota-Onalarga</NavLink>
+                    </div>
+                    <div className="btn-group-user">
+                        {
+                            !isLogin ? (
+                                <div className='d-flex'>
+                                    <Link to='/login' onClick={()=>setSidebar(false)}>
+                                        <SecondaryButton>Kirish</SecondaryButton>
+                                    </Link>
+                                    <Link to='/register' onClick={()=>setSidebar(false)}>
+                                        <MainBtn>Log up</MainBtn>
+                                    </Link>
                                 </div>
-                            </div>
-                        )
-                    }
+                            ) : (
+                                <div className='d-flex'>
+                                    <Link className="userBar" to='/shaxsiy'>
+                                        <div style={!getUser.avatar ? { padding: "8px 15px" } : null}>
+                                            {
+                                                getUser.avatar ?
+                                                    <img src={getUser.avatar} alt="" />
+                                                    :
+                                                    getUser.ism[0]
+                                            }
+                                        </div>
+                                    </Link>
+                                    <div className='log-out' onClick={() => logoutUser()}>
+                                        <Button onClick={()=>setSidebar(false)}>log out</Button>
+                                    </div>
+                                </div>
+                            )
+                        }
 
+                    </div>
                 </div>
+                <button className="burger-bar" onClick={() => setSidebarState(sidebar)}>
+                    <i class="bi bi-list"></i>
+                </button>
             </div>
         </div>
     )

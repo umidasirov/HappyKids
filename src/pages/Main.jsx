@@ -65,7 +65,7 @@ export default function Main() {
         <div className="second-main-container">
           <img src={img} alt="" className="animation_top_back" />
           <div className="star">
-            <img src={star} alt="" className="animation_circle" />
+            <img src={star} alt="" className="animation_circle2" />
           </div>
           <div className="circ">
             <img src={circle} alt="" className="animation_circle" />
