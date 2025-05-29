@@ -530,15 +530,18 @@ body {
           }
         }
       }
-      .Ertaklar{
+
+      .Ertaklar {
         width: 1440px;
         margin: 0 auto;
       }
-      .Mashqlar{
+
+      .Mashqlar {
         width: 1440px;
         margin: 0 auto;
       }
-      .Ota-onalar{
+
+      .Ota-onalar {
         width: 1440px;
         margin: 0 auto;
       }
@@ -721,21 +724,24 @@ body {
             .btn-group-user {
               width: 100%;
               display: block;
-              .d-flex{
+
+              .d-flex {
                 button {
                   width: 80px;
                   height: 40px;
                   font-weight: 600 !important;
                 }
+
                 align-items: center;
                 justify-content: space-between;
+
                 .userBar {
                   text-decoration: none;
                   font-size: 20px;
                   width: 44px;
                   height: 44px;
                   border-radius: 50%;
-  
+
                   div {
                     text-decoration: none;
                     width: 44px !important;
@@ -744,16 +750,15 @@ body {
                     background-color: #4f46e5;
                     border-radius: 50%;
                     overflow: hidden;
-  
+
                     img {
                       width: 44px;
                       height: 44px;
                     }
                   }
-              }
-              .log-out{
+                }
 
-              }
+                .log-out {}
               }
             }
           }
@@ -1095,6 +1100,7 @@ body {
             }
           }
         }
+
         .games {
           .main-games {
             width: 100%;
@@ -1192,6 +1198,7 @@ body {
           margin: 0 auto;
           margin-top: 40px;
           flex-direction: column;
+
           .reg-first {
             border-radius: 0;
             border-top-left-radius: 10px;
@@ -1254,18 +1261,22 @@ body {
             padding: 20px;
             width: 100%;
             margin: 0 auto;
-            form{
+
+            form {
               display: flex;
               align-items: center;
               flex-direction: column;
             }
+
             h2 {
               text-align: center;
               margin-bottom: 10px;
             }
-            .btn{
+
+            .btn {
               margin: 0 auto !important;
               text-align: center;
+
               button {
                 height: 50px;
                 margin-bottom: 15px;
@@ -1273,6 +1284,94 @@ body {
               }
             }
           }
+        }
+
+        .Shaxsiy {
+          margin: 0 auto;
+          margin-top: 20px;
+          padding: 30px;
+          width: 1440px;
+          border-radius: 10px;
+          height: 1000px;
+
+          .left-container {
+            height: 1000px;
+            width: 300px;
+
+            .profile {
+              border-radius: 10px;
+              padding: 20px;
+              width: 300px;
+              height: 200px;
+              border: 1px solid $mainBackColor;
+              background: $mainBackColor;
+              box-shadow: #c4baba 1px 10px 10px 10px;
+
+              .main-avatar {
+                display: flex;
+                align-items: center;
+
+                .profile-det {
+                  margin-left: 10px;
+                  display: flex;
+                  color: #4f46e5;
+                  flex-direction: column;
+                }
+
+                .avatar {
+                  width: 80px;
+                  height: 80px;
+                  overflow: hidden;
+                  border-radius: 50% !important;
+
+                  img {
+                    width: 100%;
+                    height: 100%;
+                  }
+                }
+              }
+            }
+
+            .quick-panel {
+              a {
+                font-weight: 500;
+                margin-top: 10px;
+
+                &:hover {
+                  &::after {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    bottom: -2px;
+                    width: 100%;
+                    height: 2px;
+                    background-image: linear-gradient(90deg,
+                        rgba(131, 58, 180, 1) 0%,
+                        rgba(253, 29, 29, 1) 50%,
+                        rgba(252, 176, 69, 1) 100%);
+                    transform: scaleX(0);
+                    transform-origin: left;
+                    transition: transform 0.3s ease-in-out;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .Ertaklar {
+          width: 100%;
+          margin: 0 auto;
+        }
+
+        .Mashqlar {
+          width: 100%;
+          margin: 0 auto;
+        }
+
+        .Ota-onalar {
+          width: 100%;
+          margin: 0 auto;
         }
       }
 
