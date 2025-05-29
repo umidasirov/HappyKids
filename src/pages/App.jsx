@@ -15,10 +15,14 @@ import { MainContext } from "../context/Context";
 import PrivateRoute, { PrivateFor } from "../Routes/PrivateRote";
 import Footer from "../components/Footer";
 import Games from "./Games";
+import Ertaklar from "./Ertaklar";
+import Parents from "./Parents";
+import Mashqlar from "./Mashqlar";
+import NotFound from "../components/NotFound";
 export default function App() {
   useEffect(() => {
     AOS.init({
-      duration: 1000,
+      duration: 10000,
       once: false,
       offset: 100,
     });
@@ -44,6 +48,10 @@ export default function App() {
             }
           />
           <Route path="/games/*" element={<Games />}/>
+          <Route path="/story" element={<Ertaklar/>}/>
+          <Route path="/parents" element={<Parents/>}/>
+          <Route path="/activities" element={<Mashqlar/>}/>
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
       <Footer />

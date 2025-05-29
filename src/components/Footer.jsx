@@ -4,7 +4,8 @@ import react, { useContext } from "react";
 export default function Footer() {
   const { categories } = useContext(MainContext);
   return (
-    <div className="footer">
+    <div className="footer" data-aos="fade-up"
+      data-aos-duration="1000">
       <div className="first-footer-category">
         <Link className="logo-footer" to="/">
           🙂 Happy kids

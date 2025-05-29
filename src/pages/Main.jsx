@@ -56,7 +56,7 @@ export default function Main() {
             qiladi.
           </p>
           <div className="btn-group">
-            <Link to={!isLog ? "/game" : "/login"}>
+            <Link to={!isLog ? "/games" : "/login"}>
               <Button>Boshlash</Button>
             </Link>
             <SecondaryButton>Ko'proq</SecondaryButton>
