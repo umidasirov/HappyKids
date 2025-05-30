@@ -31,7 +31,7 @@ export default function Mashqlar() {
                                 <div className="mashqlar-slide-first">
                                     <h1>Fanlar boyicha <span style={{ color: e.color }}>{e.name}</span></h1>
                                     <p>{e.description}</p>
-                                    <Link to={`activities${e.link}`}>
+                                    <Link to={`/activities${e.link}`}>
                                         <MainBtn>O'tish ➡</MainBtn>
                                     </Link>
                                 </div>
