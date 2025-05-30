@@ -652,6 +652,22 @@ body {
       .Resource {
         width: 1440px;
         margin: 0 auto;
+        .main-resource{
+          height: 100%;
+          padding: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          .kitoblar{
+            width: 220px;
+            padding: 10px;
+            img{
+              width: 100%;
+              height: 220px;
+            }
+          }
+        }
       }
 
       .Test {
