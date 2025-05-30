@@ -19,7 +19,7 @@ import Ertaklar from "./Ertaklar";
 import Parents from "./Parents";
 import Mashqlar from "./Mashqlar";
 import NotFound from "../components/NotFound";
-import Ertak from "../components/Ertaklar/Ertak.jsX";
+import Ertak from "../components/Ertaklar/Ertak.jsx";
 export default function App() {
   useEffect(() => {
     AOS.init({
