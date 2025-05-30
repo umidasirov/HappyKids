@@ -560,8 +560,10 @@ body {
           display: flex;
           align-items: center;
           justify-content: space-around;
+          margin-top: 50px;
           flex-wrap: wrap;
           .cardlar{
+            margin-bottom: 30px;
             border: 1px solid $bigMain;
             border-radius: 10px;
             height: 420px;
