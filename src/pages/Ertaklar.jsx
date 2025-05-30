@@ -3,7 +3,7 @@ import { useContext } from "react"
 import { MainContext } from "../context/Context"
 import ErtaklarCard from "../components/Ertaklar/ErtaklarCard"
 export default function Ertaklar() {
-  const {ertaklar} = useContext(MainContext)
+  const {ertaklar,generateSlug} = useContext(MainContext)
   
     return (
           <div className="Ertaklar p-4">
@@ -15,7 +15,7 @@ export default function Ertaklar() {
               </nav>
               <div className="ertaklar">
                   {ertaklar.map((e)=>(
-                    <ErtaklarCard name={e.name} img={e.img} description={e.description} star={e.stars} slug={}/>
+                    <ErtaklarCard name={e.name} img={e.img} description={e.description} star={e.stars} slug={generateSlug(e.name)}/>
                   ))}
               </div>
           </div>
