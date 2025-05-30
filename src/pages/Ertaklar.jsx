@@ -15,7 +15,7 @@ export default function Ertaklar() {
               </nav>
               <div className="ertaklar">
                   {ertaklar.map((e)=>(
-                    <ErtaklarCard name={e.name} img={e.img} description={e.description} star={e.stars} slug={generateSlug(e.name)}/>
+                    <ErtaklarCard name={e.name} img={e.img} description={e.description} star={e.stars} />
                   ))}
               </div>
           </div>
