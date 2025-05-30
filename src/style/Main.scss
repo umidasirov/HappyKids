@@ -556,6 +556,34 @@ body {
       .Ertaklar {
         width: 1440px;
         margin: 0 auto;
+        .ertaklar{
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+          flex-wrap: wrap;
+          .cardlar{
+            border: 1px solid $bigMain;
+            border-radius: 10px;
+            height: 420px;
+            overflow: hidden;
+            width: 300px;
+            .text-card{
+              color: #5e15d4;
+              padding: 10px;
+            }
+            img{
+              border-bottom: 1px $bigMain;
+              width: 100%;
+              height: 250px;
+            }
+            .description-story{
+              color: $forp;
+              font-size: 12px;
+              overflow: hidden;
+              height: 80px;
+            }
+          }
+        }
       }
 
       .Mashqlar {
