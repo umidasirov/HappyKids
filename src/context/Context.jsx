@@ -170,16 +170,6 @@ export function MainProvider({ children }) {
       color: "#8681ff"
     }
   ];
-  const [kitoblar, setKitoblar] = useState(null)
-  useEffect(() => {
-    axios.get(`${domen}/api/api/files/`)
-      .then(response => {
-        setKitoblar(response.data);
-      })
-      .catch(error => {
-        console.error('Xatolik:', error);
-      });
-  }, [])
 
 
   const [categories] = useState([
@@ -406,8 +396,6 @@ export function MainProvider({ children }) {
   return (
     <MainContext.Provider
       value={{
-        setKitoblar,
-        kitoblar,
         topAct,
         short,
         generateSlug,

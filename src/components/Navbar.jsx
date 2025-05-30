@@ -20,7 +20,7 @@ export default function Navbar() {
                 <Logo />
                 <div className={`sidebar ${sidebar?"active" : ''}`}>
                     <div className="category">
-                        <div className="logo-sidebar"><Logo /> <button onClick={() => setSidebarState(sidebar)}><i class="bi bi-x-lg"></i></button></div>
+                        <div className="logo-sidebar"><Logo /> <button onClick={() => setSidebarState(sidebar)}><i className="bi bi-x-lg"></i></button></div>
                         <NavLink to='/' onClick={()=>setSidebar(false)}>Asosiy</NavLink>
                         <NavLink to='/games' onClick={()=>setSidebar(false)}>Oyinlar</NavLink>
                         <NavLink to='/story' onClick={()=>setSidebar(false)}>Ertaklar</NavLink>
@@ -60,7 +60,7 @@ export default function Navbar() {
                     </div>
                 </div>
                 <button className="burger-bar" onClick={() => setSidebarState(sidebar)}>
-                    <i class="bi bi-list"></i>
+                    <i className="bi bi-list"></i>
                 </button>
             </div>
         </div>

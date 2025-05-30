@@ -25,7 +25,7 @@ export default function Footer() {
         <div className="second-main foot-title">Tez Havolalar</div>
         <div className="mini-bar">
           {categories.map((e) => (
-            <Link to={e.link}>{e.title}</Link>
+            <Link key={e.link} to={e.link}>{e.title}</Link>
           ))}
         </div>
       </div>

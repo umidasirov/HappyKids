@@ -78,7 +78,7 @@ export default function Main() {
       <div className="title">Nega Ota-onalar va Bolalar Bizni Tanlaydi </div>
       <div className="why_us">
         {whyUs.map((e) => (
-          <div
+          <div key={e.description}
             className="why_cards"
             data-aos="fade-right"
             data-aos-offset="300"
