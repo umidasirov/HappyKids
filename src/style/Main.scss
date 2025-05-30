@@ -447,24 +447,30 @@ body {
         .main-games {
           width: 1440px;
           margin: 0 auto;
-          .main-game-content{
-            .main-game-banner{
+
+          .main-game-content {
+            .main-game-banner {
               margin-top: 40px;
-              .slide{
+
+              .slide {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-                .game-slide-first{
+
+                .game-slide-first {
                   width: 40%;
                 }
-                button{
-                width: 400px;
-                height: 40px;
+
+                button {
+                  width: 400px;
+                  height: 40px;
                 }
-                .game-slide-second{
-                img{
-                width: 500px;
-                height:500px;}
+
+                .game-slide-second {
+                  img {
+                    width: 500px;
+                    height: 500px;
+                  }
                 }
               }
             }
@@ -553,36 +559,42 @@ body {
         }
       }
 
-      .ertak{
+      .ertak {
         width: 1440px;
         margin: 0 auto;
       }
+
       .Ertaklar {
         width: 1440px;
         margin: 0 auto;
-        .ertaklar{
+
+        .ertaklar {
           display: flex;
           align-items: center;
           justify-content: space-around;
           margin-top: 50px;
           flex-wrap: wrap;
-          .cardlar{
+
+          .cardlar {
             margin-bottom: 30px;
             border: 1px solid $bigMain;
             border-radius: 10px;
             height: 420px;
             overflow: hidden;
             width: 300px;
-            .text-card{
+
+            .text-card {
               color: #5e15d4;
               padding: 10px;
             }
-            img{
+
+            img {
               border-bottom: 1px $bigMain;
               width: 100%;
               height: 250px;
             }
-            .description-story{
+
+            .description-story {
               color: $forp;
               font-size: 12px;
               overflow: hidden;
@@ -595,29 +607,35 @@ body {
       .Mashqlar {
         width: 1440px;
         margin: 0 auto;
-        .mashqlar-main-banner{
+
+        .mashqlar-main-banner {
           margin-top: 100px;
           height: 600px;
-          .slide{
+
+          .slide {
             display: flex;
             align-items: center;
             justify-content: space-evenly;
-            .mashqlar-slide-first{
+
+            .mashqlar-slide-first {
               height: 300px;
               width: 40%;
-              h1{
-                p{
+
+              h1 {
+                p {
                   color: red;
                 }
               }
-              button{
+
+              button {
                 width: 300px;
                 height: 50px;
                 margin-top: 40px;
               }
             }
-            .mashqlar-slide-second{
-              img{
+
+            .mashqlar-slide-second {
+              img {
                 height: 400px;
                 width: 460px;
               }
@@ -630,15 +648,18 @@ body {
         width: 1440px;
         margin: 0 auto;
       }
-      .Resource{
+
+      .Resource {
         width: 1440px;
         margin: 0 auto;
       }
-      .Test{
+
+      .Test {
         width: 1440px;
         margin: 0 auto;
       }
-      .Video{
+
+      .Video {
         width: 1440px;
         margin: 0 auto;
       }
@@ -703,10 +724,12 @@ body {
         }
       }
     }
-    .not-found{
-    width: 1440px;
-    margin: 0 auto;
-}
+
+    .not-found {
+      width: 1440px;
+      margin: 0 auto;
+    }
+
     @media (max-width:600px) {
       width: 100%;
       margin: 0 auto;
@@ -864,10 +887,12 @@ body {
           }
         }
       }
-      .not-found{
-    width: 100%;
-    margin: 0 auto;
-}
+
+      .not-found {
+        width: 100%;
+        margin: 0 auto;
+      }
+
       .pages {
         flex: 1;
         width: 100%;
@@ -1208,37 +1233,45 @@ body {
           .main-games {
             width: 100%;
             margin: 0 auto;
-            .main-game-content{
-            .main-game-banner{
-              margin-top: 30px;
-              .slide{
-                border: 1px solid $bigMain;
-                border-radius: 10px;
-                padding: 15px;
-                height: 440px;
-                display: flex;
-                flex-direction: column-reverse;
-                align-items: center;
-                justify-content: space-between;
-                .game-slide-first{
-                  width: 100%;
-                  h1{
-                    color: $forp;
+
+            .main-game-content {
+              .main-game-banner {
+                margin-top: 30px;
+
+                .slide {
+                  border: 1px solid $bigMain;
+                  border-radius: 10px;
+                  padding: 15px;
+                  height: 440px;
+                  display: flex;
+                  flex-direction: column-reverse;
+                  align-items: center;
+                  justify-content: space-between;
+
+                  .game-slide-first {
+                    width: 100%;
+
+                    h1 {
+                      color: $forp;
+                    }
                   }
-                }
-                button{
-                width: 100%;
-                height: 40px;
-                }
-                .game-slide-second{
-                img{
-                width: 200px;
-                height:200px;}
+
+                  button {
+                    width: 100%;
+                    height: 40px;
+                  }
+
+                  .game-slide-second {
+                    img {
+                      width: 200px;
+                      height: 200px;
+                    }
+                  }
                 }
               }
             }
           }
-          }
+
           nav {
             font-size: 15px;
           }
@@ -1490,9 +1523,11 @@ body {
             }
           }
         }
-        .ertak{
+
+        .ertak {
           width: 100%;
         }
+
         .Ertaklar {
           width: 100%;
           margin: 0 auto;
@@ -1501,45 +1536,68 @@ body {
         .Mashqlar {
           width: 100%;
           margin: 0 auto;
-          .mashqlar-main-banner{
-          margin-top: 100px;
-          height: 600px;
-          .slide{
-            display: flex;
-            align-items: center;
-            flex-direction: column-reverse;
-            text-align: center;
-            justify-content: space-evenly;
-            .mashqlar-slide-first{
-              height: 100%;
-              width: 100%;
-              h1{
-                height: 60px;
-                p{
-                  color: red;
+
+          .mashqlar-main-banner {
+            margin-top: 100px;
+            height: 600px;
+
+            .slide {
+              display: flex;
+              align-items: center;
+              flex-direction: column-reverse;
+              text-align: center;
+              justify-content: space-evenly;
+
+              .mashqlar-slide-first {
+                height: 100%;
+                width: 100%;
+
+                h1 {
+                  height: 60px;
+
+                  p {
+                    color: red;
+                  }
+                }
+
+                p {
+                  text-align: left;
+                  height: 80px;
+                }
+
+                button {
+                  width: 300px;
+                  height: 50px;
+                  margin-top: 40px;
                 }
               }
-              p{
-                text-align: left;
-                height: 80px;
-              }
-              button{
-                width: 300px;
-                height: 50px;
-                margin-top: 40px;
-              }
-            }
-            .mashqlar-slide-second{
-              img{
-                height: 400px;
-                width: 460px;
+
+              .mashqlar-slide-second {
+                img {
+                  height: 400px;
+                  width: 460px;
+                }
               }
             }
           }
         }
-        }
 
         .Ota-onalar {
+          width: 100%;
+          margin: 0 auto;
+        }
+
+        .Resource {
+          width: 100%;
+          margin: 0 auto;
+        }
+
+        .Test {
+          width: 100%;
+          margin: 0 auto;
+        }
+
+        .Video {
           width: 100%;
           margin: 0 auto;
         }
