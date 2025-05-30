@@ -45,6 +45,12 @@ export function MainProvider({ children }) {
       return false;
     }
   };
+function short(maxLength, text) {
+  if (text.length > maxLength) {
+    return text.slice(0, maxLength) + "...";
+  }
+  return text;
+}
 
   const getProfile = async () => {
     const token = localStorage.getItem("access");
@@ -360,6 +366,7 @@ function restoreFromSlug(slug) {
   return (
     <MainContext.Provider
       value={{
+        short,
         generateSlug,
         ertaklar,
         setErtaklar,

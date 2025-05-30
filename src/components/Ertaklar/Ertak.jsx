@@ -6,7 +6,6 @@ export default function Ertak() {
     const { ertaklar, generateSlug } = useContext(MainContext)
     const { slug } = useParams()
     const user = ertaklar.find(u => generateSlug(u.name) === slug);
-    console.log(ertaklar);
     
     if (!user) {
         return <div>Topilmadi</div>
