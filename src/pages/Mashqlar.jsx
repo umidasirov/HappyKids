@@ -5,7 +5,7 @@ import { useContext } from "react"
 import { MainContext } from "../context/Context"
 import MainBtn from "../components/MainBtn"
 export default function Mashqlar() {
-    const {topAct} = useContext(MainContext)
+    const { topAct } = useContext(MainContext)
     return (
         <div className="Mashqlar p-4">
             <nav style={{ "--bs-breadcrumb-divider": "'>'" }} aria-label="breadcrumb">
@@ -14,7 +14,9 @@ export default function Mashqlar() {
                     <li className="breadcrumb-item active" aria-current="page">Mashqlar</li>
                 </ol>
             </nav>
-            <div className="mashqlar-main-banner">
+            <div className="mashqlar-main-banner" data-aos="fade-right"
+                data-aos-offset="300"
+                data-aos-easing="ease-in-sine">
                 <Swiper
                     modules={[Autoplay]}
                     spaceBetween={50}
@@ -27,7 +29,7 @@ export default function Mashqlar() {
                         <SwiperSlide>
                             <div className="slide">
                                 <div className="mashqlar-slide-first">
-                                    <h1>Fanlar boyicha <span style={{color:e.color}}>{e.name}</span></h1>
+                                    <h1>Fanlar boyicha <span style={{ color: e.color }}>{e.name}</span></h1>
                                     <p>{e.description}</p>
                                     <Link to={`activities${e.link}`}>
                                         <MainBtn>O'tish ➡</MainBtn>
