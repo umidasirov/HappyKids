@@ -5,7 +5,7 @@ export const MainContext = createContext();
 
 export function MainProvider({ children }) {
   const [domen, setDomen] = useState(
-    "http://pythonproject2-wceu.onrender.com"
+    "https://pythonproject2-wceu.onrender.com"
     // "http://localhost:8000"
   );
 
