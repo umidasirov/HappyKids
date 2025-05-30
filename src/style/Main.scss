@@ -553,6 +553,10 @@ body {
         }
       }
 
+      .ertak{
+        width: 1440px;
+        margin: 0 auto;
+      }
       .Ertaklar {
         width: 1440px;
         margin: 0 auto;
@@ -591,6 +595,35 @@ body {
       .Mashqlar {
         width: 1440px;
         margin: 0 auto;
+        .mashqlar-main-banner{
+          margin-top: 100px;
+          height: 600px;
+          .slide{
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            .mashqlar-slide-first{
+              height: 300px;
+              width: 40%;
+              h1{
+                p{
+                  color: red;
+                }
+              }
+              button{
+                width: 300px;
+                height: 50px;
+                margin-top: 40px;
+              }
+            }
+            .mashqlar-slide-second{
+              img{
+                height: 400px;
+                width: 460px;
+              }
+            }
+          }
+        }
       }
 
       .Ota-onalar {
@@ -1439,7 +1472,9 @@ body {
             }
           }
         }
-
+        .ertak{
+          width: 100%;
+        }
         .Ertaklar {
           width: 100%;
           margin: 0 auto;

@@ -11,7 +11,7 @@ export default function Ertak() {
         return <div>Topilmadi</div>
     }
     return (
-        <div className="p-4">
+        <div className="p-4 ertak">
             <nav style={{ "--bs-breadcrumb-divider": "'>'" }} aria-label="breadcrumb">
                 <ol className="breadcrumb">
                     <li className="breadcrumb-item"><Link to="/">Asosiy</Link></li>

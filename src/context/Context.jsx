@@ -1,6 +1,8 @@
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
-
+import testlar1 from "../files/main/Test.jpg"
+import resurslar1 from "../files/main/math_teacher.jpg"
+import online_lesson1 from "../files/main/online_lessons.jpg"
 export const MainContext = createContext();
 
 export function MainProvider({ children }) {
@@ -141,6 +143,34 @@ function restoreFromSlug(slug) {
         console.error('Xatolik:', error);
       });
   }, []);
+
+  const topAct = [
+  {
+    id: 1,
+    name: "resurslar",
+    description: "Bolalar uchun qulay oson usulda tshunturilgan mashqlar va darslar bolalar uchun albatta foydali bo'ladi 👨‍🏫",
+    link: "/matematika",
+    img: resurslar1,
+    color:"#6f616e"
+  },
+  {
+    id: 2,
+    name: "video-darslar",
+    description: "O'qituvchilarimiz tomonidan saralab olingan, sifatli va tezkor you-tube kurslarimiz sizga yoqadi degan umiddamiz",
+    link: "/video-dars",
+    img: online_lesson1,
+    color:"#fb725a"
+  },
+  {
+    id: 3,
+    name: "testlar",
+    description: "O'zlashtirgam mavzu va darslar boyicha ixtiyoriy mavzular, va fanlardan testlar topshirib o'zlashtirgan bilimlarizim sinab ko'ring",
+    link: "/test",
+    img: testlar1,
+    color:"#8681ff"
+  }
+];
+
 
   const [categories] = useState([
     {
@@ -366,6 +396,7 @@ function restoreFromSlug(slug) {
   return (
     <MainContext.Provider
       value={{
+        topAct,
         short,
         generateSlug,
         ertaklar,
