@@ -112,13 +112,20 @@ export function MainProvider({ children }) {
     }
   }, []);
   function generateSlug(name) {
-  return name
-    .toLowerCase() // kichik harfga o‘tkazamiz
-    .replace(/ /g, '-') // bo‘sh joylarni '-' ga almashtiramiz
-    .replace(/[^\w\-]+/g, '') // harf va raqamdan boshqa belgilarni olib tashlaymiz
-    .replace(/\-\-+/g, '-') // ketma-ket '-' larni bitta qiladi
-    .trim(); // ortiqcha bo‘sh joylarni olib tashlaydi
+    return name
+      .toLowerCase() // kichik harfga o‘tkazamiz
+      .replace(/ /g, '-') // bo‘sh joylarni '-' ga almashtiramiz
+      .replace(/[^\w\-]+/g, '') // harf va raqamdan boshqa belgilarni olib tashlaymiz
+      .replace(/\-\-+/g, '-') // ketma-ket '-' larni bitta qiladi
+      .trim(); // ortiqcha bo‘sh joylarni olib tashlaydi
+  }
+function restoreFromSlug(slug) {
+  return slug
+    .split('-')                        // разбиваем по "-"
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1)) // делаем первую букву заглавной
+    .join(' ');                        // объединяем обратно через пробел
 }
+
 
   const [categories] = useState([
     {

@@ -19,6 +19,7 @@ import Ertaklar from "./Ertaklar";
 import Parents from "./Parents";
 import Mashqlar from "./Mashqlar";
 import NotFound from "../components/NotFound";
+import Ertak from "../components/Ertaklar/Ertak.jsX";
 export default function App() {
   useEffect(() => {
     AOS.init({
@@ -51,6 +52,7 @@ export default function App() {
           <Route path="/story" element={<Ertaklar/>}/>
           <Route path="/parents" element={<Parents/>}/>
           <Route path="/activities" element={<Mashqlar/>}/>
+          <Route path="/story/:slug" element={<Ertak/>}/>
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
