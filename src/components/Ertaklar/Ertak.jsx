@@ -6,7 +6,8 @@ export default function Ertak() {
     const { ertaklar, generateSlug } = useContext(MainContext)
     const { slug } = useParams()
     const user = ertaklar.find(u => generateSlug(u.name) === slug);
-
+    console.log(ertaklar);
+    
     if (!user) {
         return <div>Topilmadi</div>
     }
@@ -23,7 +24,7 @@ export default function Ertak() {
                 data-aos-offset="300"
                 data-aos-easing="ease-in-sine">
                 <h1>{user.name}</h1>
-                <p>{user.mainText}</p>
+                <p>{user.main_text}</p>
             </div>
         </div>
     );
