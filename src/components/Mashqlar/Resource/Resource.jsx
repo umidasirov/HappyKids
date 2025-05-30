@@ -1,5 +1,9 @@
 import { Link } from "react-router-dom"
+import { useContext } from "react"
+import { MainContext } from "../../../context/Context"
 export default function Resource() {
+const {kitoblar} = useContext(MainContext)
+console.log(kitoblar);
 
     return (
         <div className="Resource p-4">
@@ -10,6 +14,14 @@ export default function Resource() {
                     <li className="breadcrumb-item active" aria-current="page">Resurslar</li>
                 </ol>
             </nav>
+            <div className="main-resource">
+                {kitoblar.map((e)=>(
+                    <div className="kitoblar">
+                        <img src={e.img} alt="" />
+                        {e.name}
+                    </div>
+                ))}
+            </div>
         </div>
     )
 }

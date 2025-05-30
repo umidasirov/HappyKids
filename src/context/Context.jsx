@@ -47,12 +47,12 @@ export function MainProvider({ children }) {
       return false;
     }
   };
-function short(maxLength, text) {
-  if (text.length > maxLength) {
-    return text.slice(0, maxLength) + "...";
+  function short(maxLength, text) {
+    if (text.length > maxLength) {
+      return text.slice(0, maxLength) + "...";
+    }
+    return text;
   }
-  return text;
-}
 
   const getProfile = async () => {
     const token = localStorage.getItem("access");
@@ -128,12 +128,12 @@ function short(maxLength, text) {
       .replace(/\-\-+/g, '-') // ketma-ket '-' larni bitta qiladi
       .trim(); // ortiqcha bo‘sh joylarni olib tashlaydi
   }
-function restoreFromSlug(slug) {
-  return slug
-    .split('-')                        // разбиваем по "-"
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1)) // делаем первую букву заглавной
-    .join(' ');                        // объединяем обратно через пробел
-}
+  function restoreFromSlug(slug) {
+    return slug
+      .split('-')                        // разбиваем по "-"
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1)) // делаем первую букву заглавной
+      .join(' ');                        // объединяем обратно через пробел
+  }
   useEffect(() => {
     axios.get(`${domen}/api/ertaklar`)
       .then(response => {
@@ -145,31 +145,41 @@ function restoreFromSlug(slug) {
   }, []);
 
   const topAct = [
-  {
-    id: 1,
-    name: "resurslar",
-    description: "Bolalar uchun qulay oson usulda tshunturilgan mashqlar va darslar bolalar uchun albatta foydali bo'ladi 👨‍🏫",
-    link: "/matematika",
-    img: resurslar1,
-    color:"#6f616e"
-  },
-  {
-    id: 2,
-    name: "video-darslar",
-    description: "O'qituvchilarimiz tomonidan saralab olingan, sifatli va tezkor you-tube kurslarimiz sizga yoqadi degan umiddamiz",
-    link: "/video-dars",
-    img: online_lesson1,
-    color:"#fb725a"
-  },
-  {
-    id: 3,
-    name: "testlar",
-    description: "O'zlashtirgam mavzu va darslar boyicha ixtiyoriy mavzular, va fanlardan testlar topshirib o'zlashtirgan bilimlarizim sinab ko'ring",
-    link: "/test",
-    img: testlar1,
-    color:"#8681ff"
-  }
-];
+    {
+      id: 1,
+      name: "resurslar",
+      description: "Bolalar uchun qulay oson usulda tshunturilgan mashqlar va darslar bolalar uchun albatta foydali bo'ladi 👨‍🏫",
+      link: "/matematika",
+      img: resurslar1,
+      color: "#6f616e"
+    },
+    {
+      id: 2,
+      name: "video-darslar",
+      description: "O'qituvchilarimiz tomonidan saralab olingan, sifatli va tezkor you-tube kurslarimiz sizga yoqadi degan umiddamiz",
+      link: "/video-dars",
+      img: online_lesson1,
+      color: "#fb725a"
+    },
+    {
+      id: 3,
+      name: "testlar",
+      description: "O'zlashtirgam mavzu va darslar boyicha ixtiyoriy mavzular, va fanlardan testlar topshirib o'zlashtirgan bilimlarizim sinab ko'ring",
+      link: "/test",
+      img: testlar1,
+      color: "#8681ff"
+    }
+  ];
+  const [kitoblar, setKitoblar] = useState(null)
+  useEffect(() => {
+    axios.get(`${domen}/api/api/files/`)
+      .then(response => {
+        setKitoblar(response.data);
+      })
+      .catch(error => {
+        console.error('Xatolik:', error);
+      });
+  }, [])
 
 
   const [categories] = useState([
@@ -396,6 +406,8 @@ function restoreFromSlug(slug) {
   return (
     <MainContext.Provider
       value={{
+        setKitoblar,
+        kitoblar,
         topAct,
         short,
         generateSlug,
