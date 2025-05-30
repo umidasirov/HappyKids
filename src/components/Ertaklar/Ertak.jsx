@@ -19,8 +19,12 @@ export default function Ertak() {
                     <li className="breadcrumb-item active" aria-current="page">{user.name}</li>
                 </ol>
             </nav>
-            <h1>{user.name}</h1>
-            <p>{user.mainText}</p>
+            <div data-aos="fade-right"
+                data-aos-offset="300"
+                data-aos-easing="ease-in-sine">
+                <h1>{user.name}</h1>
+                <p>{user.mainText}</p>
+            </div>
         </div>
     );
 }
