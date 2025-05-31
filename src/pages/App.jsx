@@ -22,7 +22,7 @@ import NotFound from "../components/NotFound";
 import Ertak from "../components/Ertaklar/Ertak";
 import Resource from "../components/Mashqlar/Resource/Resource";
 import Video from "../components/Mashqlar/Video/Video";
-import Test from "../components/Mashqlar/Test/Test";
+import Tests from "../components/Mashqlar/Test/Tests";
 import VideoDarslar from "../components/Mashqlar/Video/VideoDarslar";
 export default function App() {
   useEffect(() => {
@@ -59,7 +59,7 @@ export default function App() {
           <Route path="/story/:slug" element={<Ertak/>}/>
           <Route path="/activities/matematika" element={<Resource/>}/>
           <Route path="/activities/video-dars" element={<Video/>}/>
-          <Route path="/activities/test" element={<Test/>}/>
+          <Route path="/activities/test" element={<Tests/>}/>
           <Route path="/activities/video-dars/:slug" element={<VideoDarslar/>}/>
           <Route path="*" element={<NotFound />} />
         </Routes>

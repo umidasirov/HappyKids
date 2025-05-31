@@ -5,6 +5,10 @@ $boxShadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
 $bigMain: #5e15d4;
 $forp: #4e46e5b6;
 $mt: 60px;
+$bigMain: #4f46e5;
+$perfectColor: #28a745;
+$goodColor: #ffc107;
+$tryAgainColor: #dc3545;
 
 body {
   .app {
@@ -673,25 +677,147 @@ body {
         }
       }
 
-      .Test {
+
+      .testlar-container {
         width: 1440px;
         margin: 0 auto;
+        font-family: Arial, sans-serif;
+
+        h2 {
+          text-align: center;
+          margin-top: 40px;
+          font-size: 32px;
+          color: #333;
+        }
+
+        .test-body {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          width: 100%;
+        }
+
+        .test-item {
+          width: 300px;
+          margin: 0 auto;
+          border: 1px solid $bigMain;
+          margin-bottom: 40px;
+          border-radius: 10px;
+          overflow: hidden;
+          transition: transform 0.3s ease;
+
+          &:hover {
+            transform: scale(1.05);
+          }
+
+          p {
+            color: #fff;
+            font-size: 30px;
+            text-align: center;
+            padding: 20px;
+            border-bottom: 1px solid $bigMain;
+            background-color: $bigMain;
+          }
+
+          .options {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 10px 20px;
+            justify-content: space-between;
+            align-items: start;
+
+            label {
+              width: 30%;
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              cursor: pointer;
+              transition: background-color 0.2s ease;
+
+              &:hover {
+                background-color: $bigMain;
+                color: #fff;
+              }
+            }
+          }
+        }
+
+        .score {
+          margin-top: 20px;
+          text-align: center;
+
+          button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            font-size: 16px;
+
+            &:hover {
+              background-color: #45a049;
+            }
+          }
+        }
+
+        .result-message {
+          margin-top: 20px;
+          padding: 20px;
+          text-align: center;
+          border-radius: 10px;
+          font-size: 1.2em;
+          animation: fadeIn 1s ease-in-out;
+
+          h3 {
+            margin-bottom: 10px;
+          }
+
+          &.perfect {
+            background-color: $perfectColor;
+            color: white;
+          }
+
+          &.good {
+            background-color: $goodColor;
+            color: black;
+          }
+
+          &.try-again {
+            background-color: $tryAgainColor;
+            color: white;
+          }
+        }
       }
 
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+
       .Video {
-        width: 100%; 
+        width: 100%;
         max-width: 1440px;
         margin: 0 auto;
 
         .main-category {
           display: flex;
-          flex-wrap: wrap; 
-          gap: 20px; 
-          justify-content: center; 
+          flex-wrap: wrap;
+          gap: 20px;
+          justify-content: center;
 
           .subjectLessons {
             flex: 0 1 300px;
-            box-sizing: border-box; 
+            box-sizing: border-box;
 
             .subjects {
               border-radius: 20%;
@@ -715,7 +841,7 @@ body {
         }
       }
 
-      .darslar-royhati{
+      .darslar-royhati {
         width: 1440px;
         margin: 0 auto;
       }
