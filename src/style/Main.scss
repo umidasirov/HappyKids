@@ -916,7 +916,9 @@ body {
     @media (max-width:600px) {
       width: 100%;
       margin: 0 auto;
-
+      .breadcrumb{
+        font-size: 15px;
+      }
       .nav {
         .nav-container {
           box-shadow: $boxShadow;
