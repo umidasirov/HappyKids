@@ -25,7 +25,6 @@ export default function Navbar() {
                         <NavLink to='/games' onClick={()=>setSidebar(false)}>Oyinlar</NavLink>
                         <NavLink to='/story' onClick={()=>setSidebar(false)}>Ertaklar</NavLink>
                         <NavLink to='/activities' onClick={()=>setSidebar(false)}>Mashqlar</NavLink>
-                        <NavLink to='/parents' onClick={()=>setSidebar(false)}>Ota-Onalarga</NavLink>
                     </div>
                     <div className="btn-group-user">
                         {

@@ -24,6 +24,7 @@ import Resource from "../components/Mashqlar/Resource/Resource";
 import Video from "../components/Mashqlar/Video/Video";
 import Tests from "../components/Mashqlar/Test/Tests";
 import VideoDarslar from "../components/Mashqlar/Video/VideoDarslar";
+import FanlarTest from "../components/Mashqlar/Test/FanlarTest";
 export default function App() {
   useEffect(() => {
     AOS.init({
@@ -59,7 +60,8 @@ export default function App() {
           <Route path="/story/:slug" element={<Ertak/>}/>
           <Route path="/activities/matematika" element={<Resource/>}/>
           <Route path="/activities/video-dars" element={<Video/>}/>
-          <Route path="/activities/test" element={<Tests/>}/>
+          <Route path="/activities/test" element={<FanlarTest/>}/>
+          <Route path="/activities/test/math" element={<Tests/>}/>
           <Route path="/activities/video-dars/:slug" element={<VideoDarslar/>}/>
           <Route path="*" element={<NotFound />} />
         </Routes>

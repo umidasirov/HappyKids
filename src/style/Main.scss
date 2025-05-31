@@ -791,6 +791,34 @@ body {
         }
       }
 
+      .fanlar-test {
+        width: 1440px;
+        margin: 0 auto;
+
+        .fanlar {
+
+          display: flex;
+          align-items: center;
+          flex-wrap: wrap;
+          flex-direction: row;
+
+          .card-subject {
+            border: 1px solid $bigMain;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 40px;
+
+            img {
+              width: 300px;
+            }
+
+            h3 {
+              padding: 0px 15px;
+            }
+          }
+        }
+      }
+
       @keyframes fadeIn {
         0% {
           opacity: 0;
@@ -917,9 +945,11 @@ body {
     @media (max-width:600px) {
       width: 100%;
       margin: 0 auto;
-      .breadcrumb{
+
+      .breadcrumb {
         font-size: 15px;
       }
+
       .nav {
         .nav-container {
           box-shadow: $boxShadow;
@@ -1895,49 +1925,77 @@ body {
           }
         }
 
+        .fanlar-test {
+          width: 100%;
+          margin: 0 auto;
 
- .Video {
-        width: 100%;
-        max-width: 1440px;
-        margin: 0 auto;
+          .fanlar {
+          margin-top: 40px;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            flex-direction: column;
 
-        .main-category {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 20px;
-          justify-content: center;
-
-          .subjectLessons {
-            flex: 0 1 300px;
-            box-sizing: border-box;
-
-            .subjects {
-              border-radius: 20%;
-              height: 250px;
-              text-align: center;
-              border: 1px solid $forp;
+            .card-subject {
+              border: 1px solid $bigMain;
+              border-radius: 10px;
               overflow: hidden;
+              margin-bottom: 40px;
 
               img {
-                width: 100%;
-                height: 170px;
-                object-fit: cover; // картинка сохраняет пропорции и покрывает область
-                border-radius: 20% 20% 0 0; // скругляем верх изображения (опционально)
+                width: 300px;
               }
 
-              .content-subject {
-                padding: 10px;
+              h3 {
+                padding: 0px 15px;
               }
             }
           }
         }
-      }
+
+        .Video {
+          width: 100%;
+          max-width: 1440px;
+          margin: 0 auto;
+
+          .main-category {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            justify-content: center;
+
+            .subjectLessons {
+              flex: 0 1 300px;
+              box-sizing: border-box;
+
+              .subjects {
+                border-radius: 20%;
+                height: 250px;
+                text-align: center;
+                border: 1px solid $forp;
+                overflow: hidden;
+
+                img {
+                  width: 100%;
+                  height: 170px;
+                  object-fit: cover; // картинка сохраняет пропорции и покрывает область
+                  border-radius: 20% 20% 0 0; // скругляем верх изображения (опционально)
+                }
+
+                .content-subject {
+                  padding: 10px;
+                }
+              }
+            }
+          }
+        }
 
         .darslar-royhati {
           width: 100%;
           margin: 0 auto;
-          iframe{
+
+          iframe {
             height: 350px;
           }
         }
