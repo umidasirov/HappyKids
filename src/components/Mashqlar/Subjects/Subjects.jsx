@@ -1,11 +1,17 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom"
+import { MainContext } from "../../../context/Context";
 export default function Subjects({ img, lessonName, data }) {
+  const { generateSlug } = useContext(MainContext)
+  const link = generateSlug(lessonName)
+  console.log(data);
   return (
-    <div className="subjects">
-      <img src={img} alt={lessonName} />
-      <div className="content-subject">
-        <h3>{lessonName}</h3>
-        {data.map((e) => (
+    <div className="subjects" >
+      <Link to={link}>
+        <img src={img} alt={lessonName} />
+        <div className="content-subject">
+          <h3>{lessonName}</h3>
+          {/* {data.map((e) => (
           <div key={e.name}>
             <p>{e.name}</p>
             <iframe
@@ -18,8 +24,9 @@ export default function Subjects({ img, lessonName, data }) {
               title={e.name}
             />
           </div>
-        ))}
-      </div>
+        ))} */}
+        </div>
+      </Link>
     </div>
   );
 }
