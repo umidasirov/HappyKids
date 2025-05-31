@@ -8,7 +8,7 @@ export default function Video() {
     const { setaLoad, seta, domen, a, aload } = useContext(MainContext)
     useEffect(() => {
         setaLoad(true);
-        axios.get(`${domen}/api/videodarslar/`)
+        axios.get(`${domen}/api/items/`)
             .then(response => {
                 seta(response.data);
                 setaLoad(false);
