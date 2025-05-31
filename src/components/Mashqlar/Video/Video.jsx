@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import Subjects from "../Subjects/Subjects"
 export default function Video() {
     return (
         <div className="Video p-4">
@@ -9,6 +10,9 @@ export default function Video() {
                     <li className="breadcrumb-item active" aria-current="page">Video-darslar</li>
                 </ol>
             </nav>
+            <div className="main-category">
+                <Subjects/>
+            </div>
         </div>
     )
 }

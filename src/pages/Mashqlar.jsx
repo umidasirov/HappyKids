@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules"
+import { Autoplay,Scrollbar } from "swiper/modules"
 import { Link } from "react-router-dom"
 import { useContext } from "react"
 import { MainContext } from "../context/Context"
@@ -18,8 +18,9 @@ export default function Mashqlar() {
                 data-aos-offset="300"
                 data-aos-easing="ease-in-sine">
                 <Swiper
-                    modules={[Autoplay]}
+                    modules={[Autoplay,Scrollbar]}
                     spaceBetween={50}
+                    scrollbar={{dragSize:300,enabled:true,draggable:true}}
                     autoplay={{ delay: 3000, disableOnInteraction: true }}
                     slidesPerView={1}
                     onSlideChange={() => console.log("slide change")}

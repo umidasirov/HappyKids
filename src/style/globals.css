@@ -16,3 +16,8 @@ a{
 .name{
     color: rgb(39, 145, 39);
 }
+.swiper-scrollbar-horizontal{
+}
+.swiper-wrapper{
+    margin-bottom: 50px !important; 
+}

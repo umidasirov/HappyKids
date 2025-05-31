@@ -7,7 +7,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { useContext } from "react";
 import { MainContext } from "../context/Context";
 import "swiper/css";
-import { Autoplay } from "swiper/modules";
+import { Autoplay,Scrollbar } from "swiper/modules";
 export default function Games() {
   console.log("islayapti");
   const { topgames, setTopGames } = useContext(MainContext);
@@ -40,8 +40,9 @@ export default function Games() {
               >
                 <div className="main-game-banner">
                   <Swiper
-                    modules={[Autoplay]}
+                    modules={[Autoplay,Scrollbar]}
                     spaceBetween={50}
+                    scrollbar={{dragSize:300,enabled:true,draggable:true}}
                     autoplay={{ delay: 3000, disableOnInteraction: true }}
                     slidesPerView={1}
                     onSlideChange={() => console.log("slide change")}
