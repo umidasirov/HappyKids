@@ -10,7 +10,7 @@ export function MainProvider({ children }) {
     "https://pythonproject2-wceu.onrender.com"
     // "http://localhost:7000"
   );
-
+  const [isLoad, setIsLoad] = useState(false)
   const [sidebar, setSidebar] = useState(false);
 
   const [user, setUser] = useState({
@@ -170,7 +170,8 @@ export function MainProvider({ children }) {
       color: "#8681ff"
     }
   ];
-
+    const [a, seta] = useState([])
+    const [aload, setaLoad] = useState([])
 
   const [categories] = useState([
     {
@@ -396,6 +397,10 @@ export function MainProvider({ children }) {
   return (
     <MainContext.Provider
       value={{
+        seta,
+        setaLoad,
+        aload,
+        a,
         topAct,
         short,
         generateSlug,

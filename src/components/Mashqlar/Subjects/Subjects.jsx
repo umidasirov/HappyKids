@@ -7,7 +7,7 @@ export default function Subjects({ img, lessonName, data }) {
   console.log(data);
   return (
     <div className="subjects" >
-      <Link to={link}>
+      <Link to={`/activities/video-dars/${link}`}>
         <img src={img} alt={lessonName} />
         <div className="content-subject">
           <h3>{lessonName}</h3>
