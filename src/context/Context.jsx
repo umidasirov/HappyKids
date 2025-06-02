@@ -1,8 +1,8 @@
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
-import testlar1 from "../files/main/Test.jpg"
-import resurslar1 from "../files/main/math_teacher.jpg"
-import online_lesson1 from "../files/main/online_lessons.jpg"
+import testlar1 from "../files/main/Test.jpg";
+import resurslar1 from "../files/main/math_teacher.jpg";
+import online_lesson1 from "../files/main/online_lessons.jpg";
 export const MainContext = createContext();
 
 export function MainProvider({ children }) {
@@ -10,7 +10,7 @@ export function MainProvider({ children }) {
     "https://pythonproject2-wceu.onrender.com"
     // "http://localhost:8000"
   );
-  const [isLoad, setIsLoad] = useState(false)
+  const [isLoad, setIsLoad] = useState(false);
   const [sidebar, setSidebar] = useState(false);
 
   const [user, setUser] = useState({
@@ -123,24 +123,25 @@ export function MainProvider({ children }) {
   function generateSlug(name) {
     return name
       .toLowerCase() // kichik harfga o‘tkazamiz
-      .replace(/ /g, '-') // bo‘sh joylarni '-' ga almashtiramiz
-      .replace(/[^\w\-]+/g, '') // harf va raqamdan boshqa belgilarni olib tashlaymiz
-      .replace(/\-\-+/g, '-') // ketma-ket '-' larni bitta qiladi
+      .replace(/ /g, "-") // bo‘sh joylarni '-' ga almashtiramiz
+      .replace(/[^\w\-]+/g, "") // harf va raqamdan boshqa belgilarni olib tashlaymiz
+      .replace(/\-\-+/g, "-") // ketma-ket '-' larni bitta qiladi
       .trim(); // ortiqcha bo‘sh joylarni olib tashlaydi
   }
   function restoreFromSlug(slug) {
     return slug
-      .split('-')                        // разбиваем по "-"
-      .map(word => word.charAt(0).toUpperCase() + word.slice(1)) // делаем первую букву заглавной
-      .join(' ');                        // объединяем обратно через пробел
+      .split("-") // разбиваем по "-"
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1)) // делаем первую букву заглавной
+      .join(" "); // объединяем обратно через пробел
   }
   useEffect(() => {
-    axios.get(`${domen}/api/ertaklar`)
-      .then(response => {
+    axios
+      .get(`${domen}/api/ertaklar`)
+      .then((response) => {
         setErtaklar(response.data);
       })
-      .catch(error => {
-        console.error('Xatolik:', error);
+      .catch((error) => {
+        console.error("Xatolik:", error);
       });
   }, []);
 
@@ -148,30 +149,33 @@ export function MainProvider({ children }) {
     {
       id: 1,
       name: "resurslar",
-      description: "Bolalar uchun qulay oson usulda tshunturilgan mashqlar va darslar bolalar uchun albatta foydali bo'ladi 👨‍🏫",
+      description:
+        "Bolalar uchun qulay oson usulda tshunturilgan mashqlar va darslar bolalar uchun albatta foydali bo'ladi 👨‍🏫",
       link: "/matematika",
       img: resurslar1,
-      color: "#6f616e"
+      color: "#6f616e",
     },
     {
       id: 2,
       name: "video-darslar",
-      description: "O'qituvchilarimiz tomonidan saralab olingan, sifatli va tezkor you-tube kurslarimiz sizga yoqadi degan umiddamiz",
+      description:
+        "O'qituvchilarimiz tomonidan saralab olingan, sifatli va tezkor you-tube kurslarimiz sizga yoqadi degan umiddamiz",
       link: "/video-dars",
       img: online_lesson1,
-      color: "#fb725a"
+      color: "#fb725a",
     },
     {
       id: 3,
       name: "testlar",
-      description: "O'zlashtirgam mavzu va darslar boyicha ixtiyoriy mavzular, va fanlardan testlar topshirib o'zlashtirgan bilimlarizim sinab ko'ring",
+      description:
+        "O'zlashtirgam mavzu va darslar boyicha ixtiyoriy mavzular, va fanlardan testlar topshirib o'zlashtirgan bilimlarizim sinab ko'ring",
       link: "/test",
       img: testlar1,
-      color: "#8681ff"
-    }
+      color: "#8681ff",
+    },
   ];
-    const [a, seta] = useState([])
-    const [aload, setaLoad] = useState([])
+  const [a, seta] = useState([]);
+  const [aload, setaLoad] = useState([]);
 
   const [categories] = useState([
     {
@@ -200,15 +204,6 @@ export function MainProvider({ children }) {
         "Bolalar uchun qiziqarli va rivojlantiruvchi faoliyatlar — matematik misollar va ma'rifatli mashqlar!",
       link: "/activities",
       bgColor: "#E71D36",
-    },
-    {
-      id: 4,
-      icon: "Parents",
-      title: "Ota onalar",
-      description:
-        "Bolangizni qollab quvvatlash uchun ota onalarga maslahatlar.",
-      link: "/parents",
-      bgColor: "#662E9B",
     },
   ]);
   const [topgames, setTopGames] = useState([
@@ -394,6 +389,8 @@ export function MainProvider({ children }) {
     //   ]
     // },
   ]);
+  console.log(getUser);
+
   return (
     <MainContext.Provider
       value={{

@@ -41,6 +41,11 @@ export default function Shaxsiy() {
             BorderCol="white"
             BackCol="red"
           />
+          <div className="email a">
+            e-mail: <a href={getUser.email}>{getUser.email}</a>
+          </div>
+          <div className="telNum a">Raqami: {getUser.telRaqam}</div>
+          <div className="town a ">Shaxri: {getUser.shaxar}</div>
         </div>
         <QuickLinks />
       </div>
