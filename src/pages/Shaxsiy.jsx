@@ -70,15 +70,19 @@ export default function Shaxsiy() {
             </h1>
             <div className="courses-profile">
               {a.map((subject) => (
-                <div>
-                  {subject.id == getUser.courses[subject.id - 1] ?
-                    <div className="kurs">
-                      <div className="subjectLessons" key={subject.name || idx}>
-                        <Subjects lessonName={subject.name} img={subject.img} data={subject.course} />
-                      </div>
-                    </div> : ""}
-                </div>
+                getUser.courses.includes(subject.id) && (
+                  <div className="kurs" key={subject.id}>
+                    <div className="subjectLessons">
+                      <Subjects
+                        lessonName={subject.name}
+                        img={subject.img}
+                        data={subject.course}
+                      />
+                    </div>
+                  </div>
+                )
               ))}
+
             </div>
           </div>
         </div>
