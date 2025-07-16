@@ -6,14 +6,16 @@ import { Link, NavLink } from 'react-router-dom'
 import { MainContext } from '../context/Context'
 import Button from './Button'
 export default function Navbar() {
-    const { user, sidebar,setSidebar, isLogin, setIsLogin, logoutUser, getUser } = useContext(MainContext)
+    const { user, sidebar,setSidebar, isLogin, setIsLogin, logoutUser, getUser,domen } = useContext(MainContext)
     const authorization = () => {
         console.log(user.boy);
-
+        
     }
     const setSidebarState = (e) =>{
         setSidebar(e=>!e)
     }
+    console.log(getUser);
+        
     return (
         <div className='nav'>
             <div className="nav-container">
@@ -43,9 +45,9 @@ export default function Navbar() {
                                         <div onClick={()=>setSidebar(false)} style={!getUser.avatar ? { padding: "8px 15px" } : null}>
                                             {
                                                 getUser.avatar ?
-                                                    <img src={getUser.avatar} alt="" />
-                                                    :
-                                                    getUser.ism[0]
+                                                <img src={domen+getUser.avatar} alt="" />
+                                                :
+                                                getUser.ism[0]
                                             }
                                         </div>
                                     </Link>

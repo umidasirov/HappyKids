@@ -2184,3 +2184,22 @@ body {
     }
   }
 }
+.courses-profile{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  div{
+    .kurs{
+      display: inline-block;
+      border: 1px solid;
+      border-radius: 15px;
+      text-align: center; 
+      overflow: hidden;
+      width: 200px;
+      img{
+        width: 100%;
+      }
+    }
+  }
+}

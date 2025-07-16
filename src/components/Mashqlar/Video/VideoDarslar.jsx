@@ -5,22 +5,23 @@ import axios from "axios";
 import Swiper from "swiper";
 import { Link } from "react-router-dom";
 export default function VideoDarslar() {
-    const { a, generateSlug, aload, seta, setaLoad, domen } = useContext(MainContext);
+    const { a, generateSlug, aload, seta, setaLoad, domen ,location} = useContext(MainContext);
     const { slug } = useParams();
-
+    
     // Загружаем данные при монтировании компонента
     useEffect(() => {
         setaLoad(true);
         axios.get(`${domen}/api/items/`)
             .then(response => {
                 seta(response.data);
+                console.log(location);
                 setaLoad(false);
             })
             .catch(error => {
                 console.error('Xatolik:', error);
                 setaLoad(false);
             });
-    }, [domen, seta, setaLoad]);
+    }, [domen, seta, setaLoad, location]);
 
     if (aload) {
         return <div style={{ height: "1000px", width: "10%", textAlign: "center", margin: "0 auto", display: "flex", justifyContent: "center", flexDirection: "column" }}><div className="spinner-border" role="status"><span className="sr-only">Loading...</span></div></div>

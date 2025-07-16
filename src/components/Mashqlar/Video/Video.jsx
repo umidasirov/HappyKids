@@ -5,7 +5,7 @@ import Subjects from "../Subjects/Subjects"
 import { MainContext } from "../../../context/Context"
 
 export default function Video() {
-    const { setaLoad, seta, domen, a, aload } = useContext(MainContext)
+    const {location, setaLoad, seta, domen, a, aload } = useContext(MainContext)
     useEffect(() => {
         setaLoad(true);
         axios.get(`${domen}/api/items/`)
