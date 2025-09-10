@@ -30,6 +30,7 @@ export default function Shaxsiy() {
       .then((response) => {
         seta(response.data);
         setaLoad(false);
+        console.log(a);
       })
       .catch((error) => {
         console.error("Xatolik:", error);
@@ -50,22 +51,6 @@ export default function Shaxsiy() {
       <div className="left-container">
         <div className="profile">
           <div className="main-avatar">
-            {getUser && getUser.avatar ? (
-              <div className="avatar">
-                <img
-                  src={getUser.avatar}
-                  alt=""
-                  style={{
-                    width: 90,
-                    height: 90,
-                    borderRadius: "50%",
-                    border: "4px solid #FFD700",
-                    boxShadow: "0 2px 8px #FFD70055",
-                    objectFit: "cover",
-                  }}
-                />
-              </div>
-            ) : (
               <div
                 className="avatar-main"
                 style={{
@@ -85,9 +70,8 @@ export default function Shaxsiy() {
                   userSelect: "none",
                 }}
               >
-                {getUser && getUser.ism ? getUser.ism[0].toUpperCase() : ""}
+                {getUser.ism[0].toUpperCase()}
               </div>
-            )}
             <div className="profile-det">
               <div
                 className="name"
@@ -118,7 +102,6 @@ export default function Shaxsiy() {
             Shaxri: {getUser && getUser.shaxar}
           </div>
           <div className="coures">
-            <h1 style={{ color: "#FFB347", fontSize: 20 }}>Ko'rilgan kurslar:</h1>
             <div className="courses-profile" style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
               {a &&
                 a.map(
