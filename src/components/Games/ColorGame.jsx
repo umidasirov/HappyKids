@@ -1,145 +1,78 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect } from "react";
 import Confetti from "react-confetti";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
 
-const allColors = [
-  "#FF6B6B", "#FFD93D", "#6BCB77", "#4D96FF", "#FF9F1C",
-  "#6A4C93", "#FF3F8B", "#00B8A9", "#F6416C", "#FFBF00",
-  "#00A6ED", "#F46036", "#2E86AB", "#EDE574", "#00D084",
-  "#FF6F91", "#845EC2", "#D65DB1", "#FF9671", "#0081CF"
+// Faqat asosiy va o'zbekcha ranglar
+const colorList = [
+  { hex: "#FF0000", name: "Qizil" },
+  { hex: "#00FF00", name: "Yashil" },
+  { hex: "#0000FF", name: "Ko'k" },
+  { hex: "#FFFF00", name: "Sariq" },
+  { hex: "#FFA500", name: "To'q sariq" },
+  { hex: "#800080", name: "Binafsha" },
+  { hex: "#FFC0CB", name: "Pushti" },
+  { hex: "#000000", name: "Qora" },
+  { hex: "#FFFFFF", name: "Oq" }
 ];
 
-function hexToRgb(hex) {
-  const bigint = parseInt(hex.slice(1), 16);
-  const r = (bigint >> 16) & 255;
-  const g = (bigint >> 8) & 255;
-  const b = bigint & 255;
-  return [r, g, b];
-}
-
-function colorDistance(c1, c2) {
-  return Math.sqrt(
-    (c1[0] - c2[0]) ** 2 +
-    (c1[1] - c2[1]) ** 2 +
-    (c1[2] - c2[2]) ** 2
-  );
-}
-
-function filterSimilarColors(colors, threshold = 100) {
-  const filtered = [];
-  colors.forEach((color) => {
-    const rgb = hexToRgb(color);
-    const tooClose = filtered.some((fc) => colorDistance(rgb, hexToRgb(fc)) < threshold);
-    if (!tooClose) filtered.push(color);
-  });
-  return filtered;
-}
-
 export default function ColorGame() {
-  const colors = useMemo(() => filterSimilarColors(allColors, 20), []);
-
-  const [targetColor, setTargetColor] = useState("");
+  const [targetColor, setTargetColor] = useState(null);
   const [message, setMessage] = useState("");
   const [showConfetti, setShowConfetti] = useState(false);
-  const [confettiOpacity, setConfettiOpacity] = useState(0);
   const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
-
-  // Для достижений
   const [correctStreak, setCorrectStreak] = useState(0);
   const [achievements, setAchievements] = useState([]);
 
   useEffect(() => {
     pickRandomColor();
-
     const handleResize = () => {
       setWindowSize({ width: window.innerWidth, height: window.innerHeight });
     };
-
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, [colors]);
+  }, []);
 
   const pickRandomColor = () => {
-    const randomColor = colors[Math.floor(Math.random() * colors.length)];
-    setTargetColor(randomColor);
+    const random = colorList[Math.floor(Math.random() * colorList.length)];
+    setTargetColor(random);
     setMessage("");
     setShowConfetti(false);
-    setConfettiOpacity(0);
   };
 
   const checkAchievements = (streak) => {
     const newAchievements = [...achievements];
-
     if (streak === 1 && !newAchievements.includes("Birinchi muvaffaqiyat")) {
       newAchievements.push("Birinchi muvaffaqiyat");
     }
-    if (streak === 3 && !newAchievements.includes("3 seriya muvofaqiyat")) {
-      newAchievements.push("3 ta seruyadan muvofaqiyat");
+    if (streak === 3 && !newAchievements.includes("3 seriyadan muvaffaqiyat")) {
+      newAchievements.push("3 seriyadan muvaffaqiyat");
     }
-    if (streak === 5 && !newAchievements.includes("5 seriyadan muvofaqiyat")) {
-      newAchievements.push("5 seriyadan muvofaqiyat");
+    if (streak === 5 && !newAchievements.includes("5 seriyadan muvaffaqiyat")) {
+      newAchievements.push("5 seriyadan muvaffaqiyat");
     }
-    if (streak === 10 && !newAchievements.includes("10 seriyadan muvofaqiyat")) {
-      newAchievements.push("10 seriyadan muvofaqiyat");
+    if (streak === 10 && !newAchievements.includes("10 seriyadan muvaffaqiyat")) {
+      newAchievements.push("10 seriyadan muvaffaqiyat");
     }
-
     if (newAchievements.length !== achievements.length) {
       setAchievements(newAchievements);
     }
   };
 
   const handleColorClick = (color) => {
-    if (color === targetColor) {
+    if (color.hex === targetColor.hex) {
       setMessage("✅ Zo'r! To'g'ri topding!");
       setShowConfetti(true);
-      setConfettiOpacity(1);
-
-      // Обновляем серию побед и достижения
       const newStreak = correctStreak + 1;
       setCorrectStreak(newStreak);
       checkAchievements(newStreak);
-
-      setTimeout(() => {
-        setConfettiOpacity(0);
-      }, 2500);
-
-      setTimeout(() => {
-        setShowConfetti(false);
-        pickRandomColor();
-      }, 3500);
+      setTimeout(() => setShowConfetti(false), 2500);
+      setTimeout(() => pickRandomColor(), 3000);
     } else {
       setMessage("❌ Qayta urin!");
       setShowConfetti(false);
-      setConfettiOpacity(0);
-      setCorrectStreak(0); // Сброс серии при ошибке
+      setCorrectStreak(0);
     }
-  };
-
-  const getColorName = (hex) => {
-    const colorNames = {
-      "#FF6B6B": "Qizil",
-      "#FFD93D": "Sariq",
-      "#6BCB77": "Yashil",
-      "#4D96FF": "Ko‘k",
-      "#FF9F1C": "To‘q sariq",
-      "#6A4C93": "Binafsha",
-      "#FF3F8B": "Yorqin qizil",
-      "#00B8A9": "Ko‘k-yashil",
-      "#F6416C": "Qizg‘ish pushti",
-      "#FFBF00": "Oltin sariq",
-      "#00A6ED": "Ochiq ko‘k",
-      "#F46036": "Jigarrang to‘q oranj",
-      "#2E86AB": "Chuval ko‘k",
-      "#EDE574": "Sariq-yashil",
-      "#00D084": "Yashil",
-      "#FF6F91": "Pushti",
-      "#845EC2": "Lavanda",
-      "#D65DB1": "Fuksiya",
-      "#FF9671": "Och oranj",
-      "#0081CF": "To‘q ko‘k"
-    };
-    return colorNames[hex] || hex;
   };
 
   return (
@@ -148,11 +81,10 @@ export default function ColorGame() {
       style={{
         fontFamily: "'Comic Sans MS', cursive, sans-serif",
         minHeight: "80vh",
-        maxWidth: 1440,
+        maxWidth: 600,
         margin: "0 auto",
       }}
     >
-
       <nav style={{ "--bs-breadcrumb-divider": "'>'" }} aria-label="breadcrumb">
         <ol className="breadcrumb">
           <li className="breadcrumb-item"><Link to="/">Asosiy</Link></li>
@@ -160,8 +92,7 @@ export default function ColorGame() {
           <li className="breadcrumb-item active" aria-current="page">Ranglarni topish o'yini</li>
         </ol>
       </nav>
-
-      <h2 
+      <h2
         className="mb-6"
         style={{
           fontWeight: "bold",
@@ -171,37 +102,36 @@ export default function ColorGame() {
           marginBottom: "40px"
         }}
       >
-        {getColorName(targetColor)} rangini top!
+        {targetColor ? `${targetColor.name} rangini top!` : "Rang tanlanmoqda..."}
       </h2>
-
       <div
-        className="d-flex justify-content-center flex-wrap gap-4 mb-4"
-        style={{ maxWidth: "600px", margin: "0 auto" }}
-                data-aos="fade-right"
-        data-aos-offset="300"
-        data-aos-easing="ease-in-sine"
+        className="d-flex justify-content-center flex-wrap mb-4"
+        style={{ maxWidth: "200px", margin: "0 auto", gap: "20px" }}
       >
-        {colors.map((color) => (
-          <button
-            key={color}
-            onClick={() => handleColorClick(color)}
-            aria-label={`Rang: ${getColorName(color)}`}
-            style={{
-              backgroundColor: color,
-              width: "70px",
-              height: "70px",
-              borderRadius: "50%",
-              border: "3px solid white",
-              boxShadow: `0 4px 10px ${color}AA, 0 0 15px ${color}77`,
-              cursor: "pointer",
-              transition: "transform 0.2s",
-            }}
-            onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.1)")}
-            onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
-          ></button>
+        {Array.from({ length: Math.ceil(colorList.length / 2) }).map((_, rowIdx) => (
+          <div key={rowIdx} style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
+            {colorList.slice(rowIdx * 2, rowIdx * 2 + 2).map((color) => (
+              <button
+                key={color.hex}
+                onClick={() => handleColorClick(color)}
+                aria-label={`Rang: ${color.name}`}
+                style={{
+                  backgroundColor: color.hex,
+                  width: "70px",
+                  height: "70px",
+                  borderRadius: "50%",
+                  border: "3px solid white",
+                  boxShadow: `0 4px 10px ${color.hex}AA, 0 0 15px ${color.hex}77`,
+                  cursor: "pointer",
+                  transition: "transform 0.2s",
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.1)")}
+                onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
+              ></button>
+            ))}
+          </div>
         ))}
       </div>
-
       <p
         style={{
           fontWeight: "700",
@@ -213,13 +143,12 @@ export default function ColorGame() {
       >
         {message}
       </p>
-
       <div style={{ marginTop: 20, textAlign: "left", maxWidth: 300, margin: "20px auto 0" }}>
         <h3 style={{ fontSize: "1.2rem", borderBottom: "1px solid #ccc", paddingBottom: 4 }}>
           Yutuqlar
         </h3>
         {achievements.length === 0 ? (
-          <p style={{ fontStyle: "italic", color: "#666" }}>Xozircha yutuqlar yoq</p>
+          <p style={{ fontStyle: "italic", color: "#666" }}>Xozircha yutuqlar yo'q</p>
         ) : (
           <ul style={{ listStyle: "none", paddingLeft: 0 }}>
             {achievements.map((ach, idx) => (
@@ -233,7 +162,6 @@ export default function ColorGame() {
           Xozirgi yutuqlar seriyasi: <strong>{correctStreak}</strong>
         </p>
       </div>
-
       {showConfetti && (
         <div
           style={{
@@ -243,17 +171,15 @@ export default function ColorGame() {
             width: "100vw",
             height: "100vh",
             pointerEvents: "none",
-            opacity: confettiOpacity,
-            transition: "opacity 0.7s ease-in-out",
             zIndex: 9999,
           }}
         >
           <Confetti
             width={windowSize.width}
             height={windowSize.height}
-            numberOfPieces={250}
+            numberOfPieces={200}
             recycle={false}
-            colors={colors}
+            colors={colorList.map((c) => c.hex)}
           />
         </div>
       )}

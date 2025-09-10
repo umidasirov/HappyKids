@@ -8,9 +8,9 @@ export const MainContext = createContext();
 
 export function MainProvider({ children }) {
   const [domen, setDomen] = useState(
-    "https://yourprojectname-production.up.railway.app"
+    // "https://yourprojectname-production.up.railway.app"
     // "https://pythonproject2-wceu.onrender.com"
-    // "http://localhost:8000"
+    "http://localhost:8000"
   );
   const [isLoad, setIsLoad] = useState(false);
   const [sidebar, setSidebar] = useState(false);

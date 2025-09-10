@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 const alphabets = {
   uz: "A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,X,Y,Z".split(","),
   en: "A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z".split(","),
-  ru: "А,Б,В,Г,Д,Е,Ё,Ж,З,И,Й,К,Л,М,Н,О,П,Р,С,Т,У,Ф,Х,Ц,Ч,Ш,Щ,Ы,Э,Ю,Я".split(
-    ","
-  ),
+  // ru: "А,Б,В,Г,Д,Е,Ё,Ж,З,И,Й,К,Л,М,Н,О,П,Р,С,Т,У,Ф,Х,Ц,Ч,Ш,Щ,Ы,Э,Ю,Я".split(
+  //   ","
+  // ),
 };
 
 const colors = [
@@ -49,7 +49,7 @@ const AlphabetFinder = () => {
     }
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.lang =
-      lang === "uz" ? "uz-UZ" : lang === "en" ? "en-US" : "ru-RU";
+      lang === "uz" ? "uz-UZ" : "en-US";
 
     // Ovozlarni brauzer ovozlari orasidan tanlash uchun:
     const voices = window.speechSynthesis.getVoices();
@@ -95,7 +95,6 @@ const AlphabetFinder = () => {
         >
           <option value="uz">O'zbekcha</option>
           <option value="en">English</option>
-          <option value="ru">Русский</option>
         </select>
       </div>
 
