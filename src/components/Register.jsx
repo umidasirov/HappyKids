@@ -18,7 +18,7 @@ export default function Register() {
     ism: '',
     familia: '',
     telRaqam: '',
-    shaxar: '',
+    shaxar: 'T',
     tugulganKuni: ''
   });
   const [message, setMessage] = useState('');
