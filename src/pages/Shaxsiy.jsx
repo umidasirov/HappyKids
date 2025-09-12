@@ -98,7 +98,7 @@ export default function Shaxsiy() {
           <div className="telNum a" style={{ color: "#BA55D3" }}>
             Raqami: {getUser && getUser.telRaqam}
           </div>
-          <div className="coures">
+          {/* <div className="coures">
             <div className="courses-profile" style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
               {a &&
                 a.map(
@@ -128,13 +128,13 @@ export default function Shaxsiy() {
                     )
                 )}
             </div>
-          </div>
-          {/* <LearningProccess
+          </div> */}
+          <LearningProccess
             category="O'zlashtirish"
             percent={40}
             BorderCol="white"
             BackCol="red"
-          /> */}
+          />
         </div>
         <div className="text-center" style={{ margin:'0 auto',marginTop: 20 }}>
           <QuickLinks />
