@@ -98,9 +98,6 @@ export default function Shaxsiy() {
           <div className="telNum a" style={{ color: "#BA55D3" }}>
             Raqami: {getUser && getUser.telRaqam}
           </div>
-          <div className="town a" style={{ color: "#FFD700" }}>
-            Shaxri: {getUser && getUser.shaxar}
-          </div>
           <div className="coures">
             <div className="courses-profile" style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
               {a &&
