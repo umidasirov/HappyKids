@@ -129,12 +129,12 @@ export default function Shaxsiy() {
                 )}
             </div>
           </div>
-          <LearningProccess
+          {/* <LearningProccess
             category="O'zlashtirish"
             percent={40}
             BorderCol="white"
             BackCol="red"
-          />
+          /> */}
         </div>
         <div className="text-center" style={{ margin:'0 auto',marginTop: 20 }}>
           <QuickLinks />
