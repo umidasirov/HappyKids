@@ -1,10 +1,10 @@
-import React, { useEffect, useRef, useState,useContext } from 'react';
+import React, { useEffect, useRef, useState, useContext } from 'react';
 import flatpickr from 'flatpickr';
 import { MainContext } from '../context/Context';
 import 'flatpickr/dist/flatpickr.min.css';
 import { Russian } from 'flatpickr/dist/l10n/ru.js';
 import MainBtn from './MainBtn';
-import { Link ,useNavigate} from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import SecondaryButton from './SecondaryButton';
 import axios from 'axios';
 
@@ -22,9 +22,9 @@ export default function Register() {
     tugulganKuni: ''
   });
   const [message, setMessage] = useState('');
-  const {domen} = useContext(MainContext)
-  console.log(domen);
-  
+  const [loading, setLoading] = useState(false); // Новый useState для спиннера
+  const { domen } = useContext(MainContext);
+
   const handleChange = (e) => {
     setFormData(prev => ({
       ...prev,
@@ -32,7 +32,6 @@ export default function Register() {
     }));
   };
 
-  // Обработчик для select
   const handleSelectChange = (e) => {
     setFormData(prev => ({
       ...prev,
@@ -44,7 +43,7 @@ export default function Register() {
     flatpickr(dateInput.current, {
       locale: Russian,
       dateFormat: 'Y-m-d',
-      onChange: function(selectedDates, dateStr) {
+      onChange: function (selectedDates, dateStr) {
         setFormData(prev => ({
           ...prev,
           tugulganKuni: dateStr
@@ -53,24 +52,27 @@ export default function Register() {
     });
   }, []);
 
- const handleSubmit = async (e) => {
-  e.preventDefault();
-  try {
-    const response = await axios.post(`${domen}/api/register/`, formData, {
-      headers: { 'Content-Type': 'application/json' }
-    });
-    setMessage('✅ Регистрация успешна!');
-    navigate('/login');  // Переход на страницу логина
-  } catch (error) {
-    if (error.response) {
-      setMessage('❌ Ошибка: ' + JSON.stringify(error.response.data));
-    } else {
-      setMessage('❌ Ошибка соединения с сервером');
-    }
-  }
-};
-
   const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true); // Включаем спиннер
+    try {
+      const response = await axios.post(`${domen}/api/register/`, formData, {
+        headers: { 'Content-Type': 'application/json' }
+      });
+      setMessage('✅ Регистрация успешна!');
+      setLoading(false); // Выключаем спиннер
+      navigate('/login');
+    } catch (error) {
+      setLoading(false); // Выключаем спиннер
+      if (error.response) {
+        setMessage('❌ Ошибка: ' + JSON.stringify(error.response.data));
+      } else {
+        setMessage('❌ Ошибка соединения с сервером');
+      }
+    }
+  };
 
   return (
     <div className="register sh" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
@@ -116,7 +118,17 @@ export default function Register() {
             </span>
           </div>
           <div className="btn" style={{ margin: "0 auto", marginTop: '50px', width: "300px" }}>
-            <MainBtn type="submit">Royhatdan o'tish</MainBtn><br />
+            <MainBtn type="submit" disabled={loading}>
+              {loading ? (
+                <span>
+                  <span className="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                  Yuklanmoqda...
+                </span>
+              ) : (
+                "Royhatdan o'tish"
+              )}
+            </MainBtn>
+            <br />
             <Link to='/login'>
               <SecondaryButton>Kirish</SecondaryButton>
             </Link>
@@ -125,5 +137,5 @@ export default function Register() {
         </form>
       </div>
     </div>
-  );
+  )
 }
