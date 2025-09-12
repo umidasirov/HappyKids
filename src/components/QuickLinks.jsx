@@ -4,7 +4,7 @@ import { MainContext } from "../context/Context";
 export default function QuickLinks() {
   const { logoutUser } = useContext(MainContext);
   return (
-    <div className="quick-links">
+    <div className="quick-links" style={{marginTop:20}}>
       <h3 style={{ color: "#4f46e5" }}>Tezkor panel</h3>
       <div className="quick-panel">
         <NavLink to="/">

@@ -62,7 +62,7 @@ export default function Navbar() {
               <div className="d-flex">
                 <Link className="userBar" to="/shaxsiy">
                   <div
-                  className=" rounded-full bg-gray-200"
+                  className=" rounded-full bg-gray-200 border"
                     onClick={() => setSidebar(false)}
                     style={!getUser.avatar ? { padding: "8px 15px" } : null}
                   >

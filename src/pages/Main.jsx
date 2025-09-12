@@ -78,7 +78,8 @@ export default function Main() {
       <div className="title">Nega ota-onalar va bolalar bizni tanlaydi </div>
       <div className="why_us">
         {whyUs.map((e) => (
-          <div key={e.description}
+          <div
+            key={e.description}
             className="why_cards"
             data-aos="fade-right"
             data-aos-offset="300"
@@ -133,210 +134,446 @@ export default function Main() {
       <div className="comments">
         <Swiper
           modules={[Autoplay]}
-          spaceBetween={50}
+          spaceBetween={20}
           autoplay={{ delay: 3000, disableOnInteraction: true }}
-          slidesPerView={3}
+          slidesPerView={1} // default
+          breakpoints={{
+            640: {
+              // 📱 telefon (>=640px)
+              slidesPerView: 1,
+            },
+            768: {
+              // 📱 planshet (>=768px)
+              slidesPerView: 2,
+            },
+            1024: {
+              // 💻 kompyuter (>=1024px)
+              slidesPerView: 3,
+            },
+          }}
           onSlideChange={() => console.log("slide change")}
           onSwiper={(swiper) => console.log(swiper)}
         >
           <SwiperSlide>
-            <div className="comment-card" style={{
-              background: "#fff",
-              borderRadius: "20px",
-              boxShadow: "0 4px 24px rgba(0,0,0,0.08)",
-              padding: "24px 18px",
-              margin: "10px",
-              minHeight: "270px",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-between"
-            }}>
-              <div className="parent" style={{ display: "flex", alignItems: "center", marginBottom: "12px" }}>
-                <div className="avatar" style={{
-                  width: "54px",
-                  height: "54px",
-                  borderRadius: "50%",
-                  background: "#f3f3f3",
+            <div
+              className="comment-card"
+              style={{
+                background: "#fff",
+                borderRadius: "20px",
+                boxShadow: "0 4px 24px rgba(0,0,0,0.08)",
+                padding: "24px 18px",
+                margin: "10px",
+                minHeight: "270px",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
+              }}
+            >
+              <div
+                className="parent"
+                style={{
                   display: "flex",
                   alignItems: "center",
-                  justifyContent: "center",
-                  fontSize: "2rem",
-                  fontWeight: "bold",
-                  marginRight: "14px",
-                  overflow: "hidden"
-                }}>
-                  <img src="https://cdn-icons-png.flaticon.com/512/4140/4140048.png" alt="avatar" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                  marginBottom: "12px",
+                }}
+              >
+                <div
+                  className="avatar"
+                  style={{
+                    width: "54px",
+                    height: "54px",
+                    borderRadius: "50%",
+                    background: "#f3f3f3",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontSize: "2rem",
+                    fontWeight: "bold",
+                    marginRight: "14px",
+                    overflow: "hidden",
+                  }}
+                >
+                  <img
+                    src="https://cdn-icons-png.flaticon.com/512/4140/4140048.png"
+                    alt="avatar"
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                    }}
+                  />
                 </div>
                 <div className="whose-parent">
-                  <div className="name-parent" style={{ fontWeight: "600", fontSize: "1.1rem" }}>Aziza Karimova</div>
-                  <div className="parent-child" style={{ color: "#888", fontSize: "0.95rem" }}>Emma ning onasi</div>
+                  <div
+                    className="name-parent"
+                    style={{ fontWeight: "600", fontSize: "1.1rem" }}
+                  >
+                    Aziza Karimova
+                  </div>
+                  <div
+                    className="parent-child"
+                    style={{ color: "#888", fontSize: "0.95rem" }}
+                  >
+                    Sarvinoz ning onasi
+                  </div>
                 </div>
               </div>
-              <div className="parent-main-commetn i" style={{ fontSize: "1rem", color: "#444", marginBottom: "10px" }}>
-                Happy Kids platformasi orqali qizim ranglarni va sonlarni oson o'rgandi. O'yinlar juda qiziqarli va foydali! Har bir dars bolalar uchun moslashtirilgan.
+              <div
+                className="parent-main-commetn i"
+                style={{
+                  fontSize: "1rem",
+                  color: "#444",
+                  marginBottom: "10px",
+                }}
+              >
+                Happy Kids platformasi orqali qizim ranglarni va sonlarni oson
+                o'rgandi. O'yinlar juda qiziqarli va foydali! Har bir dars
+                bolalar uchun moslashtirilgan.
               </div>
-              <div className="stars" style={{ fontSize: "1.3rem", color: "#FFD700" }}>⭐⭐⭐⭐⭐</div>
+              <div
+                className="stars"
+                style={{ fontSize: "1.3rem", color: "#FFD700" }}
+              >
+                ⭐⭐⭐⭐⭐
+              </div>
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="comment-card" style={{
-              background: "#fff",
-              borderRadius: "20px",
-              boxShadow: "0 4px 24px rgba(0,0,0,0.08)",
-              padding: "24px 18px",
-              margin: "10px",
-              minHeight: "270px",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-between"
-            }}>
-              <div className="parent" style={{ display: "flex", alignItems: "center", marginBottom: "12px" }}>
-                <div className="avatar" style={{
-                  width: "54px",
-                  height: "54px",
-                  borderRadius: "50%",
-                  background: "#f3f3f3",
+            <div
+              className="comment-card"
+              style={{
+                background: "#fff",
+                borderRadius: "20px",
+                boxShadow: "0 4px 24px rgba(0,0,0,0.08)",
+                padding: "24px 18px",
+                margin: "10px",
+                minHeight: "270px",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
+              }}
+            >
+              <div
+                className="parent"
+                style={{
                   display: "flex",
                   alignItems: "center",
-                  justifyContent: "center",
-                  fontSize: "2rem",
-                  fontWeight: "bold",
-                  marginRight: "14px",
-                  overflow: "hidden"
-                }}>
-                  <img src="https://cdn-icons-png.flaticon.com/512/4140/4140051.png" alt="avatar" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                  marginBottom: "12px",
+                }}
+              >
+                <div
+                  className="avatar"
+                  style={{
+                    width: "54px",
+                    height: "54px",
+                    borderRadius: "50%",
+                    background: "#f3f3f3",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontSize: "2rem",
+                    fontWeight: "bold",
+                    marginRight: "14px",
+                    overflow: "hidden",
+                  }}
+                >
+                  <img
+                    src="https://cdn-icons-png.flaticon.com/512/4140/4140051.png"
+                    alt="avatar"
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                    }}
+                  />
                 </div>
                 <div className="whose-parent">
-                  <div className="name-parent" style={{ fontWeight: "600", fontSize: "1.1rem" }}>Murod Xudoyberdiyev</div>
-                  <div className="parent-child" style={{ color: "#888", fontSize: "0.95rem" }}>Ali ning otasi</div>
+                  <div
+                    className="name-parent"
+                    style={{ fontWeight: "600", fontSize: "1.1rem" }}
+                  >
+                    Murod Xudoyberdiyev
+                  </div>
+                  <div
+                    className="parent-child"
+                    style={{ color: "#888", fontSize: "0.95rem" }}
+                  >
+                    Ali ning otasi
+                  </div>
                 </div>
               </div>
-              <div className="parent-main-commetn" style={{ fontSize: "1rem", color: "#444", marginBottom: "10px" }}>
-                Bolam har kuni yangi mashqlarni bajarayapti va o'z bilimini oshiryapti. Platforma juda qulay va bolalar uchun mos. O'yinlar orqali o'qish jarayoni yanada qiziqarli bo'ldi.
+              <div
+                className="parent-main-commetn"
+                style={{
+                  fontSize: "1rem",
+                  color: "#444",
+                  marginBottom: "10px",
+                }}
+              >
+                Bolam har kuni yangi mashqlarni bajarayapti va o'z bilimini
+                oshiryapti. Platforma juda qulay va bolalar uchun mos. O'yinlar
+                orqali o'qish jarayoni yanada qiziqarli bo'ldi.
               </div>
-              <div className="stars" style={{ fontSize: "1.3rem", color: "#FFD700" }}>⭐⭐⭐⭐⭐</div>
+              <div
+                className="stars"
+                style={{ fontSize: "1.3rem", color: "#FFD700" }}
+              >
+                ⭐⭐⭐⭐⭐
+              </div>
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="comment-card" style={{
-              background: "#fff",
-              borderRadius: "20px",
-              boxShadow: "0 4px 24px rgba(0,0,0,0.08)",
-              padding: "24px 18px",
-              margin: "10px",
-              minHeight: "270px",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-between"
-            }}>
-              <div className="parent" style={{ display: "flex", alignItems: "center", marginBottom: "12px" }}>
-                <div className="avatar" style={{
-                  width: "54px",
-                  height: "54px",
-                  borderRadius: "50%",
-                  background: "#f3f3f3",
+            <div
+              className="comment-card"
+              style={{
+                background: "#fff",
+                borderRadius: "20px",
+                boxShadow: "0 4px 24px rgba(0,0,0,0.08)",
+                padding: "24px 18px",
+                margin: "10px",
+                minHeight: "270px",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
+              }}
+            >
+              <div
+                className="parent"
+                style={{
                   display: "flex",
                   alignItems: "center",
-                  justifyContent: "center",
-                  fontSize: "2rem",
-                  fontWeight: "bold",
-                  marginRight: "14px",
-                  overflow: "hidden"
-                }}>
-                  <img src="https://cdn-icons-png.flaticon.com/512/4140/4140037.png" alt="avatar" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                  marginBottom: "12px",
+                }}
+              >
+                <div
+                  className="avatar"
+                  style={{
+                    width: "54px",
+                    height: "54px",
+                    borderRadius: "50%",
+                    background: "#f3f3f3",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontSize: "2rem",
+                    fontWeight: "bold",
+                    marginRight: "14px",
+                    overflow: "hidden",
+                  }}
+                >
+                  <img
+                    src="https://cdn-icons-png.flaticon.com/512/4140/4140037.png"
+                    alt="avatar"
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                    }}
+                  />
                 </div>
                 <div className="whose-parent">
-                  <div className="name-parent" style={{ fontWeight: "600", fontSize: "1.1rem" }}>Dilnoza Tursunova</div>
-                  <div className="parent-child" style={{ color: "#888", fontSize: "0.95rem" }}>Madina ning onasi</div>
+                  <div
+                    className="name-parent"
+                    style={{ fontWeight: "600", fontSize: "1.1rem" }}
+                  >
+                    Dilnoza Tursunova
+                  </div>
+                  <div
+                    className="parent-child"
+                    style={{ color: "#888", fontSize: "0.95rem" }}
+                  >
+                    Madina ning onasi
+                  </div>
                 </div>
               </div>
-              <div className="parent-main-commetn" style={{ fontSize: "1rem", color: "#444", marginBottom: "10px" }}>
-                O'yinlar va ertaklar bolamga juda yoqdi. O'qituvchi sifatida ham tavsiya qilaman, bolalar uchun eng yaxshi tanlov! Darslar interaktiv va bolalar uchun juda foydali.
+              <div
+                className="parent-main-commetn"
+                style={{
+                  fontSize: "1rem",
+                  color: "#444",
+                  marginBottom: "10px",
+                }}
+              >
+                O'yinlar va ertaklar bolamga juda yoqdi. O'qituvchi sifatida ham
+                tavsiya qilaman, bolalar uchun eng yaxshi tanlov! Darslar
+                interaktiv va bolalar uchun juda foydali.
               </div>
-              <div className="stars" style={{ fontSize: "1.3rem", color: "#FFD700" }}>⭐⭐⭐⭐⭐</div>
+              <div
+                className="stars"
+                style={{ fontSize: "1.3rem", color: "#FFD700" }}
+              >
+                ⭐⭐⭐⭐⭐
+              </div>
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="comment-card" style={{
-              background: "#fff",
-              borderRadius: "20px",
-              boxShadow: "0 4px 24px rgba(0,0,0,0.08)",
-              padding: "24px 18px",
-              margin: "10px",
-              minHeight: "270px",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-between"
-            }}>
-              <div className="parent" style={{ display: "flex", alignItems: "center", marginBottom: "12px" }}>
-                <div className="avatar" style={{
-                  width: "54px",
-                  height: "54px",
-                  borderRadius: "50%",
-                  background: "#f3f3f3",
+            <div
+              className="comment-card"
+              style={{
+                background: "#fff",
+                borderRadius: "20px",
+                boxShadow: "0 4px 24px rgba(0,0,0,0.08)",
+                padding: "24px 18px",
+                margin: "10px",
+                minHeight: "270px",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
+              }}
+            >
+              <div
+                className="parent"
+                style={{
                   display: "flex",
                   alignItems: "center",
-                  justifyContent: "center",
-                  fontSize: "2rem",
-                  fontWeight: "bold",
-                  marginRight: "14px",
-                  overflow: "hidden"
-                }}>
-                  <img src="https://cdn-icons-png.flaticon.com/512/4140/4140061.png" alt="avatar" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                  marginBottom: "12px",
+                }}
+              >
+                <div
+                  className="avatar"
+                  style={{
+                    width: "54px",
+                    height: "54px",
+                    borderRadius: "50%",
+                    background: "#f3f3f3",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontSize: "2rem",
+                    fontWeight: "bold",
+                    marginRight: "14px",
+                    overflow: "hidden",
+                  }}
+                >
+                  <img
+                    src="https://cdn-icons-png.flaticon.com/512/4140/4140061.png"
+                    alt="avatar"
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                    }}
+                  />
                 </div>
                 <div className="whose-parent">
-                  <div className="name-parent" style={{ fontWeight: "600", fontSize: "1.1rem" }}>Farrux Qodirov</div>
-                  <div className="parent-child" style={{ color: "#888", fontSize: "0.95rem" }}>Diyor ning otasi</div>
+                  <div
+                    className="name-parent"
+                    style={{ fontWeight: "600", fontSize: "1.1rem" }}
+                  >
+                    Farrux Qodirov
+                  </div>
+                  <div
+                    className="parent-child"
+                    style={{ color: "#888", fontSize: "0.95rem" }}
+                  >
+                    Diyor ning otasi
+                  </div>
                 </div>
               </div>
-              <div className="parent-main-commetn" style={{ fontSize: "1rem", color: "#444", marginBottom: "10px" }}>
-                Diyor har kuni yangi o'yinlarni kutadi. Platforma bolamning fikrlashini va ijodkorligini rivojlantirdi. O'qituvchilar uchun ham juda qulay.
+              <div
+                className="parent-main-commetn"
+                style={{
+                  fontSize: "1rem",
+                  color: "#444",
+                  marginBottom: "10px",
+                }}
+              >
+                Diyor har kuni yangi o'yinlarni kutadi. Platforma bolamning
+                fikrlashini va ijodkorligini rivojlantirdi. O'qituvchilar uchun
+                ham juda qulay.
               </div>
-              <div className="stars" style={{ fontSize: "1.3rem", color: "#FFD700" }}>⭐⭐⭐⭐⭐</div>
+              <div
+                className="stars"
+                style={{ fontSize: "1.3rem", color: "#FFD700" }}
+              >
+                ⭐⭐⭐⭐⭐
+              </div>
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="comment-card" style={{
-              background: "#fff",
-              borderRadius: "20px",
-              boxShadow: "0 4px 24px rgba(0,0,0,0.08)",
-              padding: "24px 18px",
-              margin: "10px",
-              minHeight: "270px",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-between"
-            }}>
-              <div className="parent" style={{ display: "flex", alignItems: "center", marginBottom: "12px" }}>
-                <div className="avatar" style={{
-                  width: "54px",
-                  height: "54px",
-                  borderRadius: "50%",
-                  background: "#f3f3f3",
+            <div
+              className="comment-card"
+              style={{
+                background: "#fff",
+                borderRadius: "20px",
+                boxShadow: "0 4px 24px rgba(0,0,0,0.08)",
+                padding: "24px 18px",
+                margin: "10px",
+                minHeight: "270px",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
+              }}
+            >
+              <div
+                className="parent"
+                style={{
                   display: "flex",
                   alignItems: "center",
-                  justifyContent: "center",
-                  fontSize: "2rem",
-                  fontWeight: "bold",
-                  marginRight: "14px",
-                  overflow: "hidden"
-                }}>
-                  <img src="https://cdn-icons-png.flaticon.com/512/4140/4140047.png" alt="avatar" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                  marginBottom: "12px",
+                }}
+              >
+                <div
+                  className="avatar"
+                  style={{
+                    width: "54px",
+                    height: "54px",
+                    borderRadius: "50%",
+                    background: "#f3f3f3",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontSize: "2rem",
+                    fontWeight: "bold",
+                    marginRight: "14px",
+                    overflow: "hidden",
+                  }}
+                >
+                  <img
+                    src="https://cdn-icons-png.flaticon.com/512/4140/4140047.png"
+                    alt="avatar"
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                    }}
+                  />
                 </div>
                 <div className="whose-parent">
-                  <div className="name-parent" style={{ fontWeight: "600", fontSize: "1.1rem" }}>Sardor Tashpulatov</div>
-                  <div className="parent-child" style={{ color: "#888", fontSize: "0.95rem" }}>Shahzoda ning otasi</div>
+                  <div
+                    className="name-parent"
+                    style={{ fontWeight: "600", fontSize: "1.1rem" }}
+                  >
+                    Sardor Tashpulatov
+                  </div>
+                  <div
+                    className="parent-child"
+                    style={{ color: "#888", fontSize: "0.95rem" }}
+                  >
+                    Shahzoda ning otasi
+                  </div>
                 </div>
               </div>
-              <div className="parent-main-commetn" style={{ fontSize: "1rem", color: "#444", marginBottom: "10px" }}>
-                Platforma orqali bolam mustaqil o'qishni va o'ylashni o'rgandi. O'yinlar va mashqlar bolalar uchun juda motivatsion va samarali.
+              <div
+                className="parent-main-commetn"
+                style={{
+                  fontSize: "1rem",
+                  color: "#444",
+                  marginBottom: "10px",
+                }}
+              >
+                Platforma orqali bolam mustaqil o'qishni va o'ylashni o'rgandi.
+                O'yinlar va mashqlar bolalar uchun juda motivatsion va samarali.
               </div>
-              <div className="stars" style={{ fontSize: "1.3rem", color: "#FFD700" }}>⭐⭐⭐⭐⭐</div>
+              <div
+                className="stars"
+                style={{ fontSize: "1.3rem", color: "#FFD700" }}
+              >
+                ⭐⭐⭐⭐⭐
+              </div>
             </div>
           </SwiperSlide>
-
         </Swiper>
-
       </div>
     </div>
   );

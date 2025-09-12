@@ -17,7 +17,6 @@ body {
     flex-direction: column;
 
     .nav {
-
       .nav-container {
         background: $mainBackColor;
         box-shadow: $boxShadow;
@@ -63,10 +62,12 @@ body {
                 bottom: -2px;
                 width: 100%;
                 height: 2px;
-                background-image: linear-gradient(90deg,
-                    rgba(131, 58, 180, 1) 0%,
-                    rgba(253, 29, 29, 1) 50%,
-                    rgba(252, 176, 69, 1) 100%);
+                background-image: linear-gradient(
+                  90deg,
+                  rgba(131, 58, 180, 1) 0%,
+                  rgba(253, 29, 29, 1) 50%,
+                  rgba(252, 176, 69, 1) 100%
+                );
                 transform: scaleX(0);
                 transform-origin: left;
                 transition: transform 0.3s ease-in-out;
@@ -307,11 +308,13 @@ body {
                 .overlay {
                   position: absolute;
                   inset: 0;
-                  background: linear-gradient(to right,
-                      rgba(184, 183, 183, 0.521),
-                      rgba(255, 255, 255, 0.329) 40%,
-                      rgba(255, 255, 255, 0.342) 60%,
-                      rgba(252, 252, 252, 0.445));
+                  background: linear-gradient(
+                    to right,
+                    rgba(184, 183, 183, 0.521),
+                    rgba(255, 255, 255, 0.329) 40%,
+                    rgba(255, 255, 255, 0.342) 60%,
+                    rgba(252, 252, 252, 0.445)
+                  );
 
                   backdrop-filter: blur(10px);
                   -webkit-backdrop-filter: blur(5px);
@@ -552,10 +555,12 @@ body {
                   left: 0;
                   width: 100%;
                   height: 2px;
-                  background-image: linear-gradient(90deg,
-                      rgba(131, 58, 180, 1) 0%,
-                      rgba(253, 29, 29, 1) 50%,
-                      rgba(252, 176, 69, 1) 100%);
+                  background-image: linear-gradient(
+                    90deg,
+                    rgba(131, 58, 180, 1) 0%,
+                    rgba(253, 29, 29, 1) 50%,
+                    rgba(252, 176, 69, 1) 100%
+                  );
                   transform: scaleX(0);
                   transform-origin: left;
                   transition: transform 0.3s ease-in-out;
@@ -680,7 +685,6 @@ body {
         }
       }
 
-
       .testlar-container {
         width: 1440px;
         margin: 0 auto;
@@ -751,7 +755,7 @@ body {
 
           button {
             padding: 10px 20px;
-            background-color: #4CAF50;
+            background-color: #4caf50;
             color: white;
             border: none;
             cursor: pointer;
@@ -799,7 +803,6 @@ body {
         margin: 0 auto;
 
         .fanlar {
-
           display: flex;
           align-items: center;
           flex-wrap: wrap;
@@ -833,7 +836,6 @@ body {
           transform: translateY(0);
         }
       }
-
 
       .Video {
         width: 100%;
@@ -877,7 +879,6 @@ body {
         width: 1440px;
         margin: 0 auto;
       }
-
     }
 
     .footer {
@@ -945,10 +946,10 @@ body {
       margin: 0 auto;
     }
 
-    @media (max-width:600px) {
+    @media (max-width: 600px) {
       width: 100%;
       margin: 0 auto;
-      .quick-links{
+      .quick-links {
         display: none;
       }
       .breadcrumb {
@@ -1050,10 +1051,12 @@ body {
                   bottom: -2px;
                   width: 100%;
                   height: 2px;
-                  background-image: linear-gradient(90deg,
-                      rgba(131, 58, 180, 1) 0%,
-                      rgba(253, 29, 29, 1) 50%,
-                      rgba(252, 176, 69, 1) 100%);
+                  background-image: linear-gradient(
+                    90deg,
+                    rgba(131, 58, 180, 1) 0%,
+                    rgba(253, 29, 29, 1) 50%,
+                    rgba(252, 176, 69, 1) 100%
+                  );
                   transform: scaleX(0);
                   transform-origin: left;
                   transition: transform 0.3s ease-in-out;
@@ -1102,7 +1105,8 @@ body {
                   }
                 }
 
-                .log-out {}
+                .log-out {
+                }
               }
             }
           }
@@ -1117,8 +1121,6 @@ body {
       .pages {
         flex: 1;
         width: 100%;
-        // overflow: hidden;
-
         .main {
           .main-banner {
             position: relative;
@@ -1320,11 +1322,13 @@ body {
                   .overlay {
                     position: absolute;
                     inset: 0;
-                    background: linear-gradient(to right,
-                        rgba(184, 183, 183, 0.521),
-                        rgba(255, 255, 255, 0.329) 40%,
-                        rgba(255, 255, 255, 0.342) 60%,
-                        rgba(252, 252, 252, 0.445));
+                    background: linear-gradient(
+                      to right,
+                      rgba(184, 183, 183, 0.521),
+                      rgba(255, 255, 255, 0.329) 40%,
+                      rgba(255, 255, 255, 0.342) 60%,
+                      rgba(252, 252, 252, 0.445)
+                    );
 
                     backdrop-filter: blur(10px);
                     -webkit-backdrop-filter: blur(5px);
@@ -1405,46 +1409,72 @@ body {
           }
 
           .comments {
-            display: flex;
-            align-items: center;
             width: 100%;
-            padding: 10px;
-            justify-content: space-evenly;
+            max-width: 1440px;
+            display: flex;
             margin: 0 auto;
+            padding: 20px 15px; // mobilda yon tomonlar zich bo‘lib qolmasin
 
             .comment-card {
-              width: 120px;
-              height: 210px;
-              border: 1px solid;
-              border-radius: 10px;
-              padding: 10px;
+              width: 100% !important;
+              height: auto;
+              border: 1px solid #eee;
+              border-radius: 15px;
+              padding: 20px;
+              background: #fff;
+              box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
 
               .parent {
-                width: 100%;
-                margin-bottom: 5px;
+                margin-bottom: 20px;
                 display: flex;
                 align-items: center;
 
                 .avatar {
-                  height: 50px;
+                  margin-right: 15px;
+                  width: 70px;
+                  height: 70px;
+                  font-size: 22px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  border-radius: 50%;
+                  overflow: hidden;
+                  border: 1px solid #ddd;
+
+                  img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                  }
                 }
 
                 .whose-parent {
                   .name-parent {
-                    font-size: 10px;
-                    font-weight: 700;
+                    font-size: 18px;
+                    font-weight: 600;
                   }
 
                   .parent-child {
-                    font-size: 8px;
-                    font-weight: 100;
+                    font-size: 14px;
+                    font-weight: 400;
+                    color: #666;
                   }
                 }
               }
 
               .parent-main-commetn {
+                font-size: 15px;
+                line-height: 1.5;
                 margin-bottom: 10px;
-                font-size: 7px;
+                color: #444;
+              }
+
+              .stars {
+                font-size: 18px;
+                color: #ffd700;
               }
             }
           }
@@ -1525,8 +1555,8 @@ body {
               border: 1px solid $mainBackColor;
               background: $mainBackColor;
               box-shadow: none !important;
-              border-bottom-left-radius: 0px !important; 
-              border-bottom-right-radius:0px  !important;
+              border-bottom-left-radius: 0px !important;
+              border-bottom-right-radius: 0px !important;
 
               .main-avatar {
                 display: flex;
@@ -1566,10 +1596,12 @@ body {
                     bottom: -2px;
                     width: 100%;
                     height: 2px;
-                    background-image: linear-gradient(90deg,
-                        rgba(131, 58, 180, 1) 0%,
-                        rgba(253, 29, 29, 1) 50%,
-                        rgba(252, 176, 69, 1) 100%);
+                    background-image: linear-gradient(
+                      90deg,
+                      rgba(131, 58, 180, 1) 0%,
+                      rgba(253, 29, 29, 1) 50%,
+                      rgba(252, 176, 69, 1) 100%
+                    );
                     transform: scaleX(0);
                     transform-origin: left;
                     transition: transform 0.3s ease-in-out;
@@ -1597,10 +1629,12 @@ body {
             padding: 3px;
             padding: 30px;
             width: 100%;
-            background: linear-gradient(90deg,
-                rgba(53, 40, 191, 1),
-                rgba(145, 46, 232, 1),
-                rgba(169, 90, 237, 1));
+            background: linear-gradient(
+              90deg,
+              rgba(53, 40, 191, 1),
+              rgba(145, 46, 232, 1),
+              rgba(169, 90, 237, 1)
+            );
             color: #fff;
 
             p {
@@ -1610,10 +1644,12 @@ body {
             }
 
             .info {
-              background: linear-gradient(90deg,
-                  rgba(53, 40, 191, 1),
-                  rgba(145, 46, 232, 1),
-                  rgba(169, 90, 237, 1));
+              background: linear-gradient(
+                90deg,
+                rgba(53, 40, 191, 1),
+                rgba(145, 46, 232, 1),
+                rgba(169, 90, 237, 1)
+              );
               padding: 20px;
               font-size: 14px;
               margin-top: 20px;
@@ -1736,10 +1772,12 @@ body {
                     bottom: -2px;
                     width: 100%;
                     height: 2px;
-                    background-image: linear-gradient(90deg,
-                        rgba(131, 58, 180, 1) 0%,
-                        rgba(253, 29, 29, 1) 50%,
-                        rgba(252, 176, 69, 1) 100%);
+                    background-image: linear-gradient(
+                      90deg,
+                      rgba(131, 58, 180, 1) 0%,
+                      rgba(253, 29, 29, 1) 50%,
+                      rgba(252, 176, 69, 1) 100%
+                    );
                     transform: scaleX(0);
                     transform-origin: left;
                     transition: transform 0.3s ease-in-out;
@@ -1892,7 +1930,7 @@ body {
 
             button {
               padding: 10px 20px;
-              background-color: #4CAF50;
+              background-color: #4caf50;
               color: white;
               border: none;
               cursor: pointer;
@@ -1940,7 +1978,7 @@ body {
           margin: 0 auto;
 
           .fanlar {
-          margin-top: 40px;
+            margin-top: 40px;
             display: flex;
             align-items: center;
             flex-wrap: wrap;
@@ -2101,7 +2139,6 @@ body {
           display: none;
         }
       }
-
     }
   }
 
@@ -2119,10 +2156,12 @@ body {
       padding: 3px;
       padding: 30px;
       width: 50%;
-      background: linear-gradient(90deg,
-          rgba(53, 40, 191, 1),
-          rgba(145, 46, 232, 1),
-          rgba(169, 90, 237, 1));
+      background: linear-gradient(
+        90deg,
+        rgba(53, 40, 191, 1),
+        rgba(145, 46, 232, 1),
+        rgba(169, 90, 237, 1)
+      );
       color: #fff;
 
       p {
@@ -2132,10 +2171,12 @@ body {
       }
 
       .info {
-        background: linear-gradient(90deg,
-            rgba(53, 40, 191, 1),
-            rgba(145, 46, 232, 1),
-            rgba(169, 90, 237, 1));
+        background: linear-gradient(
+          90deg,
+          rgba(53, 40, 191, 1),
+          rgba(145, 46, 232, 1),
+          rgba(169, 90, 237, 1)
+        );
         padding: 20px;
         font-size: 14px;
         margin-top: 20px;
@@ -2184,21 +2225,143 @@ body {
     }
   }
 }
-.courses-profile{
+.courses-profile {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap: 10px;
-  div{
-    .kurs{
+  div {
+    .kurs {
       display: inline-block;
       border: 1px solid;
       border-radius: 15px;
-      text-align: center; 
+      text-align: center;
       overflow: hidden;
       width: 200px;
-      img{
+      img {
         width: 100%;
+      }
+    }
+  }
+}
+
+.Shaxsiy {
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 30px;
+  width: 100% !important;
+  border-radius: 10px;
+  max-width: 1440px;
+
+  .left-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    box-shadow: 0px 10px 20px 1px;
+    border-radius: 10px;
+    margin: 0 auto;
+    height: 100% !important;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    .profile {
+      border-radius: 10px;
+      padding: 20px;
+      width: 300px;
+      height: 200px;
+      border: 1px solid $mainBackColor;
+      background: $mainBackColor;
+      box-shadow: none !important;
+      border-bottom-left-radius: 0px !important;
+      border-bottom-right-radius: 0px !important;
+
+      .main-avatar {
+        display: flex;
+        align-items: center;
+
+        .profile-det {
+          margin-left: 10px;
+          display: flex;
+          color: #4f46e5;
+          flex-direction: column;
+        }
+
+        .avatar {
+          width: 80px;
+          height: 80px;
+          overflow: hidden;
+          border-radius: 50% !important;
+
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+
+    .quick-panel {
+      a {
+        font-weight: 500;
+        margin-top: 10px;
+        position: relative;
+
+        &:hover::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: -2px;
+          width: 100%;
+          height: 2px;
+          background-image: linear-gradient(
+            90deg,
+            rgba(131, 58, 180, 1) 0%,
+            rgba(253, 29, 29, 1) 50%,
+            rgba(252, 176, 69, 1) 100%
+          );
+          transform: scaleX(1);
+          transform-origin: left;
+          transition: transform 0.3s ease-in-out;
+        }
+      }
+    }
+
+    /* 📱 Responsive qism */
+    @media (max-width: 1024px) {
+      flex-direction: column; /* Yonma-yon emas, ustma-ust bo‘ladi */
+      align-items: center;
+      height: auto !important;
+      width: 100% !important;
+      flex-direction: column !important;
+
+      .profile {
+        width: 100% !important; /* To‘liq ekran egallaydi */
+        height: auto !important;
+        margin-bottom: 20px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      padding: 15px;
+
+      .profile {
+        padding: 15px;
+
+        .main-avatar {
+          flex-direction: column; /* Avatar va ism pastga tushadi */
+          text-align: center;
+
+          .profile-det {
+            margin-left: 0;
+            margin-top: 10px;
+            align-items: center;
+          }
+        }
       }
     }
   }

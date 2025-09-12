@@ -43,7 +43,7 @@ export default function Register() {
   useEffect(() => {
     flatpickr(dateInput.current, {
       locale: Russian,
-      dateFormat: 'd.m.Y',
+      dateFormat: 'Y-m-d',
       onChange: function(selectedDates, dateStr) {
         setFormData(prev => ({
           ...prev,
@@ -115,12 +115,6 @@ export default function Register() {
               <i className="bi bi-calendar"></i>
             </span>
           </div>
-          <select className="form-select" style={{ marginTop: '10px' }} onChange={handleSelectChange} name='shaxar' required value={formData.shaxar}>
-            <option value="">Shaxarni tanlang</option>
-            {cities.map(city => (
-              <option key={city} value={city}>{city}</option>
-            ))}
-          </select>
           <div className="btn" style={{ margin: "0 auto", marginTop: '50px', width: "300px" }}>
             <MainBtn type="submit">Royhatdan o'tish</MainBtn><br />
             <Link to='/login'>
