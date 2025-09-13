@@ -136,7 +136,7 @@ export default function Shaxsiy() {
             BackCol="red"
           />
         </div>
-        <div className="text-center" style={{ margin:'0 auto',marginTop: 20 }}>
+        <div className="text-center" style={{ margin:'0 auto',marginTop: 20, padding: 10, maxWidth: 400 }}>
           <QuickLinks />
         </div>
       </div>

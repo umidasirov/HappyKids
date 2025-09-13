@@ -8,11 +8,11 @@ const colorList = [
   { hex: "#00FF00", name: "Yashil" },
   { hex: "#0000FF", name: "Ko'k" },
   { hex: "#FFFF00", name: "Sariq" },
-  { hex: "#FFA500", name: "To'q sariq" },
+  { hex: "#FFA500", name: "Sabzi rang" },
   { hex: "#800080", name: "Binafsha" },
   { hex: "#FFC0CB", name: "Pushti" },
   { hex: "#000000", name: "Qora" },
-  { hex: "#FFFFFF", name: "Oq" }
+  { hex: "#fff", name: "Oq" },
 ];
 
 export default function ColorGame() {
@@ -120,7 +120,7 @@ export default function ColorGame() {
                   width: "70px",
                   height: "70px",
                   borderRadius: "50%",
-                  border: "3px solid white",
+                  border: `3px solid ${color.hex !== "#fff" ? "#fff" : "#000"}`,
                   boxShadow: `0 4px 10px ${color.hex}AA, 0 0 15px ${color.hex}77`,
                   cursor: "pointer",
                   transition: "transform 0.2s",
