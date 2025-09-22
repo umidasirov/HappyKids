@@ -53,7 +53,7 @@ export default function Login() {
                             <input
                                 type="password"
                                 className="form-control password"
-                                placeholder="*******"
+                                placeholder="passwor"
                                 aria-label="Password"
                                 aria-describedby="basic-addon2"
                                 value={password}

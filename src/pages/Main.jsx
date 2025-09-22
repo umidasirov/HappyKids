@@ -59,7 +59,9 @@ export default function Main() {
             <Link to={!isLog ? "/games" : "/login"}>
               <Button>Boshlash</Button>
             </Link>
-            <SecondaryButton>Ko'proq</SecondaryButton>
+            <Link to="/activities">
+              <SecondaryButton>Ko'proq</SecondaryButton>
+            </Link>
           </div>
         </div>
         <div className="second-main-container">
