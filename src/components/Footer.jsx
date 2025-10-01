@@ -43,8 +43,8 @@ export default function Footer() {
       <div className="third-footer footer-con">
         <div className="third-main foot-title">Aloqa</div>
         <div className="mini-bar">
-          <div><i className="bi bi-envelope"></i> umidasirov55@gmail.com</div>
-          <div><i className="bi bi-telephone"> +998950934060</i></div>
+          <div><i className="bi bi-envelope"></i> ziyodaabduqaxorva@gmail.com</div>
+          <div><i className="bi bi-telephone"> +998990277244</i></div>
           <div><i className="bi bi-geo"></i> Amir Temur Shoh kochasi TATU</div>
         </div>
       </div>
