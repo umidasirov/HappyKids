@@ -4,6 +4,7 @@ import LearningProccess from "../components/LearningProccess";
 import axios from "axios";
 import QuickLinks from "../components/QuickLinks";
 import Subjects from "../components/Mashqlar/Subjects/Subjects";
+import AnalyticsPage from "../components/charts";
 
 // Random color generator for avatar background
 function getRandomColor() {
@@ -129,12 +130,8 @@ export default function Shaxsiy() {
                 )}
             </div>
           </div> */}
-          <LearningProccess
-            category="O'zlashtirish"
-            percent={40}
-            BorderCol="white"
-            BackCol="red"
-          />
+            <AnalyticsPage/>
+
         </div>
         <div className="text-center" style={{ margin:'0 auto',marginTop: 20, padding: 10, maxWidth: 400 }}>
           <QuickLinks />

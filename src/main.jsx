@@ -5,6 +5,7 @@ import { BrowserRouter } from "react-router-dom";
 import { MainProvider } from "./context/Context";
 import "./style/const.css"
 import "./style/Main.scss"
+import "@fontsource/poppins";
 import "./style/globals.css"
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
