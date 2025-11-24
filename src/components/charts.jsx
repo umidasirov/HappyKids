@@ -14,11 +14,11 @@ ChartJS.register(ArcElement, Tooltip, Legend, CategoryScale, LinearScale, BarEle
 
 const AnalyticsPage = () => {
   const stats = {
-    totalVisitors: 1000,
-    registeredUsers: 400,
+    totalVisitors: 100,
+    registeredUsers: 40,
     gamesPlayed: {
       "O'yinlar": 3,
-      "Mashqlar": 3,
+      "Mashqlar": 2,
       "Kitoblar": 1,
     },
   };
@@ -38,7 +38,7 @@ const AnalyticsPage = () => {
     labels: ["Ro'yxatdan o'tganlar", "Ro'yxatdan o'tmaganlar"],
     datasets: [
       {
-        label: "% Foydalanuvchilar",
+        label: `${stats.totalVisitors} Foydalanuvchilar`,
         data: [stats.registeredUsers, stats.totalVisitors - stats.registeredUsers],
         backgroundColor: ["#36A2EB", "#FF9AA2"],
       },
